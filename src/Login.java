@@ -1,5 +1,6 @@
 public class Login {
-    public Login() {
-
+    String nama;
+    public Login(String nama) {
+        this.nama = nama;
     }
 }
