@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
-      <change afterPath="$PROJECT_DIR$/src/Buku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kasir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Koleksi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuUtama.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pelanggan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TokoBuku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Transaksi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HapusKoleksi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TambahTransaksiBaru.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +49,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NVPsBLxrJ6lJTn69RkXNq6DECj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,12 +60,27 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/PPTI BCA/PPTI BCA - Cawu 2 - UNSORTED/Object Oriented Programming/Source Code/Lecture",
-    "project.structure.last.edited": "Project",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/PPTI/CAWU 2/Object Oriented Programming/File - File Codingan/OOPinJava",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="TambahPelangganBaru" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TambahPelangganBaru" />
+      <module name="TokoBukuDelfi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TambahPelangganBaru" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
