@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class Keluar extends JFrame implements ActionListener {
     public Keluar() {
         super("Keluar");
-        setSize(300, 200);
+        setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }

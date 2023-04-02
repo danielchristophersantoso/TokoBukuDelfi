@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class MenuUtama extends JFrame implements ActionListener {
     public MenuUtama() {
         super("Menu Utama");
-        setSize(300, 200);
+        setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
