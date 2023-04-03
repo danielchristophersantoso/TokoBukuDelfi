@@ -15,7 +15,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     public TambahPelangganBaru(){
         super("Tambah Pelanggan Baru");
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        headerLabel.setFont(new Font("", Font.BOLD, 30));
+        headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
         headerLabel.setBounds(0,20,800,100);
         add(headerLabel, BorderLayout.NORTH);

@@ -13,7 +13,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         super("Hapus Koleksi");
         add(headerLabel, BorderLayout.NORTH);
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        headerLabel.setFont(new Font("", Font.BOLD, 30));
+        headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
         headerLabel.setBounds(0,20,800,100);
 
@@ -59,6 +59,11 @@ public class HapusKoleksi extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Koleksi berhasil dihapus");
 //                    new MenuUtama();
 //                    dispose();
+                }
+                int res2 = JOptionPane.showConfirmDialog(null,"Apakah anda ingin menghapus koleksi lainnya?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
+                if(res2 == 0)
+                {
+                    namaKoleksiField.setText("");
                 }
             }
         }

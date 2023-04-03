@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="">
+    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HapusKoleksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusKoleksi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TambahPelangganBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TambahTransaksiBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahTransaksiBaru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/PPTI/CAWU 2/Object Oriented Programming/File - File Codingan/OOPinJava&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TampilkanRiwayatTransaksi">
     <configuration name="Masuk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Masuk" />
       <module name="TokoBukuDelfi" />
@@ -81,8 +82,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TampilkanRiwayatTransaksi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TampilkanRiwayatTransaksi" />
+      <module name="TokoBukuDelfi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TampilkanRiwayatTransaksi" />
         <item itemvalue="Application.Masuk" />
         <item itemvalue="Application.TambahPelangganBaru" />
         <item itemvalue="Application.TambahTransaksiBaru" />
