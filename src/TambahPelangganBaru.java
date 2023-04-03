@@ -37,7 +37,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
-
+        tambahButton.addActionListener(this);
         footerPanel.add(tambahButton);
         footerPanel.setBackground(Color.gray);
         add(footerPanel, BorderLayout.SOUTH);
@@ -56,7 +56,38 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == tambahButton)
+        {
+            if(namaField.getText().equals("") || jumlahBukuField.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
+                return;
+            }
+            else if (Integer.parseInt(jumlahBukuField.getText()) < 0)
+            {
+                JOptionPane.showMessageDialog(null, "Jumlah buku tidak boleh kurang dari 0");
+                return;
+            }
+            else
+            {
+                String nama = namaField.getText();
+                int jumlahBuku = Integer.parseInt(jumlahBukuField.getText());
 
+                Pelanggan pelanggan = new Pelanggan(nama, jumlahBuku);
+                JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
+                int res = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan data lagi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+
+                //yes = 0 , no = 1
+                if (res==1) {
+                    dispose();
+                    new TambahPelangganBaru();
+                } else if (res==0) {
+                    namaField.setText("");
+                    jumlahBukuField.setText("");
+                }
+
+            }
+        }
     }
 
     public static void main(String[] args) {

@@ -8,6 +8,10 @@ public class Pelanggan {
         this.id = id;
         this.jumlahBuku = jumlahBuku;
     }
+    public Pelanggan(String nama, Integer jumlahBuku) {
+        this.nama = nama;
+        this.jumlahBuku = jumlahBuku;
+    }
 
     public String getNama() {
         return nama;
