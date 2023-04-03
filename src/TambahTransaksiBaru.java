@@ -20,7 +20,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         super("Tambah Transaksi Baru");
 
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        headerLabel.setFont(new Font("", Font.BOLD, 30));
+        headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
         headerLabel.setBounds(0,0,800,80);
         add(headerLabel, BorderLayout.NORTH);
