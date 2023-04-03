@@ -10,46 +10,45 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     private JLabel jumlahBukuLabel = new JLabel("Jumlah Buku");
     private JTextField jumlahBukuField = new JTextField();
     private JPanel panel = new JPanel();
-    private JPanel footerPanel = new JPanel();
+//    private JPanel footerPanel = new JPanel();
     private JButton tambahButton = new JButton("Tambah");
     public TambahPelangganBaru(){
         super("Tambah Pelanggan Baru");
-        add(headerLabel, BorderLayout.NORTH);
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        headerLabel.setFont(new Font("", Font.BOLD, 20));
+        headerLabel.setFont(new Font("", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
+        headerLabel.setBounds(0,20,800,100);
+        add(headerLabel, BorderLayout.NORTH);
 
 
-        panel.setLayout(new GridLayout(2,2));
-        namaLabel.setBounds(10,20,230,30);
+//        panel.setLayout(new GridLayout(2,2));
+        namaLabel.setBounds(40,30,230,30);
         namaLabel.setForeground(Color.BLACK);
         panel.add(namaLabel);
-        namaField.setBounds(100,20,230,30);
+        namaField.setBounds(150,30,200,30);
         panel.add(namaField);
-        jumlahBukuLabel.setBounds(10,70,230,30);
+        jumlahBukuLabel.setBounds(40,80,200,30);
         jumlahBukuLabel.setForeground(Color.BLACK);
         panel.add(jumlahBukuLabel);
-        jumlahBukuField.setBounds(100,70,230,30);
+        jumlahBukuField.setBounds(150,80,200,30);
         panel.add(jumlahBukuField);
-        panel.setBackground(Color.gray);
+        panel.setBounds(200,100,400,200);
+        panel.setBackground(Color.GRAY);
+        tambahButton.addActionListener(this);
+        tambahButton.setBackground(Color.BLACK);
+        tambahButton.setForeground(Color.WHITE);
+        tambahButton.setBounds(150, 140, 100, 30);
+        panel.add(tambahButton);
+
         setLocationRelativeTo(null);
-        panel.setForeground(Color.pink);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
-        tambahButton.addActionListener(this);
-        footerPanel.add(tambahButton);
-        footerPanel.setBackground(Color.gray);
-        add(footerPanel, BorderLayout.SOUTH);
-
-
-
-//        namaLabel.setEnabled(false);
-//        panel.getContentPane().setBackground(Color.gray);
-
-        getContentPane().setBackground(Color.gray);
+        setLayout(null);
+        getContentPane().setBackground(Color.lightGray);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setBounds(300, 90, 800, 490);
         setVisible(true);
         setResizable(false);
@@ -80,7 +79,6 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
                 //yes = 0 , no = 1
                 if (res==1) {
                     dispose();
-                    new TambahPelangganBaru();
                 } else if (res==0) {
                     namaField.setText("");
                     jumlahBukuField.setText("");
