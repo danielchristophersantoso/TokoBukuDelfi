@@ -19,6 +19,10 @@ public class Keluar extends JFrame implements ActionListener {
         add(titleLabel, BorderLayout.NORTH);
         setLocationRelativeTo(null);
         setLayout(null);
+
+        masukButton.setForeground(Color.WHITE);
+        masukButton.setBackground(Color.black);
+
         mainPanel.add(masukButton, BorderLayout.CENTER);
         mainPanel.setBounds(0, 220, 880, 295);
         add(mainPanel, BorderLayout.CENTER);
@@ -27,6 +31,7 @@ public class Keluar extends JFrame implements ActionListener {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.LIGHT_GRAY);
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         mainPanel.setBackground(Color.LIGHT_GRAY);
         setVisible(true);
     }
