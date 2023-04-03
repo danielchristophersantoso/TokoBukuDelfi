@@ -19,10 +19,8 @@ public class Keluar extends JFrame implements ActionListener {
         add(titleLabel, BorderLayout.NORTH);
         setLocationRelativeTo(null);
         setLayout(null);
-
         masukButton.setForeground(Color.WHITE);
         masukButton.setBackground(Color.black);
-
         mainPanel.add(masukButton, BorderLayout.CENTER);
         mainPanel.setBounds(0, 220, 880, 295);
         add(mainPanel, BorderLayout.CENTER);
@@ -43,7 +41,14 @@ public class Keluar extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == keluarMenuItem){
-            System.exit(0);
+            int res = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+            if (res == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
+        }
+        if (e.getSource() == masukButton){
+            new Masuk();
+            dispose();
         }
     }
 }
