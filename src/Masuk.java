@@ -17,14 +17,18 @@ public class Masuk extends JFrame implements ActionListener {
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 30));
         label.setBounds(380,110,100,50);
+        label.setForeground(Color.BLACK);
         panel.add(label);
 
 //        panel.setBackground(new Color(92, 64, 51));
+        panel.setBackground(Color.lightGray);
         usernameLabel.setBounds(285, 170, 70, 20);
+        usernameLabel.setForeground(Color.BLACK);
         panel.add(usernameLabel);
         usernameField.setBounds(285, 189, 300, 28);
         panel.add(usernameField);
         passwordLabel.setBounds(285, 220, 70, 20);
+        passwordLabel.setForeground(Color.BLACK);
         panel.add(passwordLabel);
         passwordField.setBounds(285, 239, 300, 28);
         panel.add(passwordField);
@@ -51,10 +55,10 @@ public class Masuk extends JFrame implements ActionListener {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals("Harvianto123") && password.equals("H123"))
-            JOptionPane.showMessageDialog(null, "Login Successful");
+        if (username.equals("Harvianto") && password.equals("H123"))
+            JOptionPane.showMessageDialog(null, "Berhasil Masuk!");
         else
-            JOptionPane.showMessageDialog(null, "Username or Password mismatch ");
+            JOptionPane.showMessageDialog(null, "Nama atau Password salah!");
     }
     public static void main(String[] args) {
         new Masuk();
