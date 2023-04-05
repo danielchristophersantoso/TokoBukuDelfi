@@ -4,18 +4,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuUtama extends JFrame implements ActionListener {
-    JMenuBar menuBar = new JMenuBar();
-    JMenuItem keluarMenuItem = new JMenuItem("Keluar");
-    JDesktopPane desktopPane = new JDesktopPane();
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
+    private JButton tambahBukuBaruButton = new JButton("Tambah Buku Baru");
+    private JButton hapusBukuButton = new JButton("Hapus Buku");
+    private JButton tambahKoleksiBaruButton = new JButton("Tambah Koleksi Baru");
+    private JButton hapusKoleksiButton = new JButton("Hapus Koleksi");
+    private JButton tampilkanRiwayatTransaksiButton = new JButton("Tampilkan Riwayat Transaksi");
+    private JButton tambahTransaksiBaruButton = new JButton("Tambah Transaksi Baru");
+    private JButton tambahPelangganBaruButton = new JButton("Tambah Pelanggan Baru");
+    private JButton keluarButton = new JButton("Keluar");
     public MenuUtama() {
         super("Menu Utama");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);
         setJMenuBar(menuBar);
-        setContentPane(desktopPane);
-        setSize(500, 500);
+
+        setLocationRelativeTo(null);
+        setLayout(null);
+        setSize(880, 495);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.LIGHT_GRAY);
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setVisible(true);
     }
 
@@ -26,7 +37,10 @@ public class MenuUtama extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == keluarMenuItem){
-            System.exit(0);
+            int res = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+            if (res == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
         }
     }
 }

@@ -13,24 +13,24 @@ public class Keluar extends JFrame implements ActionListener {
         super("Keluar");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);
+        setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         titleLabel.setBounds(0, 80, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
-        setLocationRelativeTo(null);
-        setLayout(null);
         masukButton.setForeground(Color.WHITE);
         masukButton.setBackground(Color.black);
         mainPanel.add(masukButton, BorderLayout.CENTER);
         mainPanel.setBounds(0, 220, 880, 295);
+        mainPanel.setBackground(Color.LIGHT_GRAY);
         add(mainPanel, BorderLayout.CENTER);
-        setJMenuBar(menuBar);
+        setLocationRelativeTo(null);
+        setLayout(null);
         setSize(880, 495);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
-        mainPanel.setBackground(Color.LIGHT_GRAY);
         setVisible(true);
     }
 
@@ -48,7 +48,6 @@ public class Keluar extends JFrame implements ActionListener {
         }
         if (e.getSource() == masukButton){
             new Masuk();
-            dispose();
         }
     }
 }

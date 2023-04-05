@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HapusKoleksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusKoleksi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TambahPelangganBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TambahTransaksiBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahTransaksiBaru.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuUtama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuUtama.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,35 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/PPTI/CAWU 2/Object Oriented Programming/File - File Codingan/OOPinJava&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "daniel",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/PPTI BCA/PPTI BCA - Cawu 2 - UNSORTED/Object Oriented Programming/Source Code/Source Code Pak Harvi",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Application.TampilkanRiwayatTransaksi">
-    <configuration name="Masuk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Masuk" />
+}]]></component>
+  <component name="RunManager" selected="Application.Keluar">
+    <configuration name="Keluar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Keluar" />
       <module name="TokoBukuDelfi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TambahPelangganBaru" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TambahPelangganBaru" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TambahTransaksiBaru" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TambahTransaksiBaru" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TampilkanRiwayatTransaksi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TampilkanRiwayatTransaksi" />
+    <configuration name="MenuUtama" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenuUtama" />
       <module name="TokoBukuDelfi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,10 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TampilkanRiwayatTransaksi" />
-        <item itemvalue="Application.Masuk" />
-        <item itemvalue="Application.TambahPelangganBaru" />
-        <item itemvalue="Application.TambahTransaksiBaru" />
+        <item itemvalue="Application.Keluar" />
+        <item itemvalue="Application.MenuUtama" />
       </list>
     </recent_temporary>
   </component>
