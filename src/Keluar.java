@@ -20,6 +20,7 @@ public class Keluar extends JFrame implements ActionListener {
         add(titleLabel, BorderLayout.NORTH);
         masukButton.setForeground(Color.WHITE);
         masukButton.setBackground(Color.black);
+        masukButton.addActionListener(this);
         mainPanel.add(masukButton, BorderLayout.CENTER);
         mainPanel.setBounds(0, 220, 880, 295);
         mainPanel.setBackground(Color.LIGHT_GRAY);
@@ -48,6 +49,7 @@ public class Keluar extends JFrame implements ActionListener {
         }
         if (e.getSource() == masukButton){
             new Masuk();
+            dispose();
         }
     }
 }

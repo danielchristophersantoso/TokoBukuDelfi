@@ -60,7 +60,7 @@ public class Masuk extends JFrame implements ActionListener {
         else
             JOptionPane.showMessageDialog(null, "Nama atau Password salah!");
     }
-    public static void main(String[] args) {
-        new Masuk();
-    }
+//    public static void main(String[] args) {
+//        new Masuk();
+//    }
 }
