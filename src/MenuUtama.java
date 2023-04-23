@@ -6,14 +6,12 @@ import java.awt.event.ActionListener;
 public class MenuUtama extends JFrame implements ActionListener {
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
-    private JButton tambahBukuBaruButton = new JButton("Tambah Buku Baru");
-    private JButton hapusBukuButton = new JButton("Hapus Buku");
-    private JButton tambahKoleksiBaruButton = new JButton("Tambah Koleksi Baru");
-    private JButton hapusKoleksiButton = new JButton("Hapus Koleksi");
-    private JButton tampilkanRiwayatTransaksiButton = new JButton("Tampilkan Riwayat Transaksi");
-    private JButton tambahTransaksiBaruButton = new JButton("Tambah Transaksi Baru");
-    private JButton tambahPelangganBaruButton = new JButton("Tambah Pelanggan Baru");
-    private JButton keluarButton = new JButton("Keluar");
+    private String[] btnLabels = new String[] {
+            "Tambah Buku Baru", "Hapus Buku ", "Tambah Koleksi Baru",
+            "Hapus Koleksi", "Tampilkan Riwayat Transaksi",
+            "Tambah Transaksi Baru", "Tambah Pelanggan Baru", "Keluar"
+    };
+    private JButton[] buttons = new JButton[]{};
     public MenuUtama() {
         super("Menu Utama");
         menuBar.add(keluarMenuItem);
