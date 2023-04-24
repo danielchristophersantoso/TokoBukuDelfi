@@ -10,7 +10,7 @@ public class Keluar extends JFrame implements ActionListener {
     private JPanel mainPanel = new JPanel();
     private JButton masukButton = new JButton("Masuk");
     public Keluar() {
-        super("Keluar");
+        this.setTitle("Keluar");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);
         setJMenuBar(menuBar);
@@ -21,18 +21,21 @@ public class Keluar extends JFrame implements ActionListener {
         masukButton.setForeground(Color.WHITE);
         masukButton.setBackground(Color.black);
         masukButton.addActionListener(this);
+        masukButton.setFocusable(false);
         mainPanel.add(masukButton, BorderLayout.CENTER);
         mainPanel.setBounds(0, 220, 880, 295);
         mainPanel.setBackground(Color.LIGHT_GRAY);
-        add(mainPanel, BorderLayout.CENTER);
-        setLocationRelativeTo(null);
-        setLayout(null);
-        setSize(880, 495);
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.LIGHT_GRAY);
-        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
-        setVisible(true);
+        mainPanel.setFocusable(false);
+        this.add(mainPanel, BorderLayout.CENTER);
+        this.setFocusable(false);
+        this.setLocationRelativeTo(null);
+        this.setLayout(null);
+        this.setSize(880, 495);
+        this.setResizable(false);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
+        this.setVisible(true);
     }
 
     public static void main(String[] args) {

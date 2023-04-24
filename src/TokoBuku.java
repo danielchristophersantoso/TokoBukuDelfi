@@ -2,14 +2,12 @@ import java.util.ArrayList;
 
 public class TokoBuku {
     private Kasir kasir;
-    private ArrayList<Buku> daftarBuku = new ArrayList<>();
     private ArrayList<Koleksi> daftarKoleksi = new ArrayList<>();
     private ArrayList<Transaksi> daftarTransaksi = new ArrayList<>();
     private ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
 
-    public TokoBuku(Kasir kasir, ArrayList<Buku> daftarBuku, ArrayList<Koleksi> daftarKoleksi, ArrayList<Transaksi> daftarTransaksi, ArrayList<Pelanggan> daftarPelanggan) {
+    public TokoBuku(Kasir kasir, ArrayList<Koleksi> daftarKoleksi, ArrayList<Transaksi> daftarTransaksi, ArrayList<Pelanggan> daftarPelanggan) {
         this.kasir = kasir;
-        this.daftarBuku = daftarBuku;
         this.daftarKoleksi = daftarKoleksi;
         this.daftarTransaksi = daftarTransaksi;
         this.daftarPelanggan = daftarPelanggan;
@@ -21,18 +19,6 @@ public class TokoBuku {
 
     public void setKasir(Kasir kasir) {
         this.kasir = kasir;
-    }
-
-    public ArrayList<Buku> getDaftarBuku() {
-        return daftarBuku;
-    }
-
-    public void addDaftarBuku(Buku buku) {
-        daftarBuku.add(buku);
-    }
-
-    public void removeDaftarBuku(Integer index) {
-        daftarBuku.remove(index);
     }
 
     public ArrayList<Koleksi> getDaftarKoleksi() {
