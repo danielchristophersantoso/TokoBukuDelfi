@@ -70,7 +70,8 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
             else
             {
                 String nama = namaField.getText();
-                int jumlahBuku = Integer.parseInt(jumlahBukuField.getText());
+                String jumlahBuku = jumlahBukuField.getText();
+                //Gua ubah jdi string, ini sebenernya dia cmn butuh nama, tar yg id nya digenerate pada saat buttonnya diklik
 
                 Pelanggan pelanggan = new Pelanggan(nama, jumlahBuku);
                 JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");

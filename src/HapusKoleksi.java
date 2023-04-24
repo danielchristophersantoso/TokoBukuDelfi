@@ -22,8 +22,12 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         Buku buku2 = new Buku("Sherlock Holmes", 12,"Arthur");
         daftarbuku.add(buku1);
         daftarbuku.add(buku2);
-        Koleksi koleksi1 = new Koleksi("1", daftarbuku);
-        Koleksi koleksi2 = new Koleksi("2", daftarbuku);
+        Koleksi koleksi1 = new Koleksi("1");
+        koleksi1.addDaftarBuku(buku1);
+        koleksi1.addDaftarBuku(buku2);
+        Koleksi koleksi2 = new Koleksi("2");
+        koleksi2.addDaftarBuku(buku1);
+        koleksi2.addDaftarBuku(buku2);
         koleksi.add(koleksi1);
         koleksi.add(koleksi2);
 
