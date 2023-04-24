@@ -12,7 +12,6 @@ public class HapusBuku extends JFrame implements ActionListener {
     private ArrayList<Buku> daftarBuku;
     public HapusBuku(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
-        daftarBuku = this.tokoBuku.getDaftarBuku();
         this.setTitle("Hapus Buku");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);

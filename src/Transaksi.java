@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 
 public class Transaksi {
+    private String idTransaksi;
     private String namaKasir;
     private ArrayList<Buku> daftarBuku = new ArrayList<>();
     private String namaPelanggan;
     private String idPelanggan;
     private Double subTotalTransaksi;
 
-    public Transaksi(String namaKasir, ArrayList<Buku> daftarBuku, String namaPelanggan, String idPelanggan, Double subTotalTransaksi) {
+    public Transaksi(String idTransaksi, String namaKasir, ArrayList<Buku> daftarBuku, String namaPelanggan, String idPelanggan, Double subTotalTransaksi) {
+        this.idTransaksi = idTransaksi;
         this.namaKasir = namaKasir;
         this.daftarBuku = daftarBuku;
         this.namaPelanggan = namaPelanggan;

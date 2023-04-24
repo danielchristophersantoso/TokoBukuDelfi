@@ -6,11 +6,8 @@ public class TokoBuku {
     private ArrayList<Transaksi> daftarTransaksi = new ArrayList<>();
     private ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
 
-    public TokoBuku(Kasir kasir, ArrayList<Koleksi> daftarKoleksi, ArrayList<Transaksi> daftarTransaksi, ArrayList<Pelanggan> daftarPelanggan) {
+    public TokoBuku(Kasir kasir) {
         this.kasir = kasir;
-        this.daftarKoleksi = daftarKoleksi;
-        this.daftarTransaksi = daftarTransaksi;
-        this.daftarPelanggan = daftarPelanggan;
     }
 
     public Kasir getKasir() {
