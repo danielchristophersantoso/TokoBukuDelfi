@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HapusBuku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusBuku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuUtama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuUtama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TokoBuku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TokoBuku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaksi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Masuk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Masuk.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,29 +53,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "daniel",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/PPTI BCA/PPTI BCA - Cawu 2 - UNSORTED/Object Oriented Programming/Source Code/BankABC",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;daniel&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PPTI BCA/PPTI BCA - Cawu 2 - UNSORTED/Object Oriented Programming/Source Code/Source Code Pak Harvi&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.Keluar">
     <configuration name="Keluar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Keluar" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Masuk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Masuk" />
       <module name="TokoBukuDelfi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,7 +84,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Keluar" />
-        <item itemvalue="Application.Masuk" />
         <item itemvalue="Application.MenuUtama" />
       </list>
     </recent_temporary>
