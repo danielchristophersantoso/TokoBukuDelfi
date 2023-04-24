@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuUtama extends JFrame implements ActionListener {
+    private TokoBuku tokoBuku;
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
     private JLabel titleLabel = new JLabel("Menu Utama");
@@ -14,7 +15,8 @@ public class MenuUtama extends JFrame implements ActionListener {
             "Tambah Transaksi Baru", "Tambah Pelanggan Baru", "Keluar"
     };
     private JButton[] buttons = new JButton[]{};
-    public MenuUtama() {
+    public MenuUtama(TokoBuku tokoBuku) {
+        this.tokoBuku = tokoBuku;
         this.setTitle("Menu Utama");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);
@@ -44,10 +46,6 @@ public class MenuUtama extends JFrame implements ActionListener {
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new MenuUtama();
     }
 
     @Override
