@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
+    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Keluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Masuk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Masuk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HapusKoleksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusKoleksi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Koleksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Koleksi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pelanggan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pelanggan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TambahPelangganBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TokoBuku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TokoBuku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaksi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

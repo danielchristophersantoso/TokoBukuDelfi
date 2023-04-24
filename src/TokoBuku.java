@@ -14,10 +14,6 @@ public class TokoBuku {
         return kasir;
     }
 
-    public void setKasir(Kasir kasir) {
-        this.kasir = kasir;
-    }
-
     public ArrayList<Koleksi> getDaftarKoleksi() {
         return daftarKoleksi;
     }
@@ -38,19 +34,11 @@ public class TokoBuku {
         daftarTransaksi.add(transaksi);
     }
 
-    public void removeDaftarTransaksi(Integer index) {
-        daftarTransaksi.remove(index);
-    }
-
     public ArrayList<Pelanggan> getDaftarPelanggan() {
         return daftarPelanggan;
     }
 
     public void addDaftarPelanggan(Pelanggan pelanggan) {
         daftarPelanggan.add(pelanggan);
-    }
-
-    public void removeDaftarPelanggan(Integer index) {
-        daftarPelanggan.remove(index);
     }
 }

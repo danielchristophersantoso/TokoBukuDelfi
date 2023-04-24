@@ -4,9 +4,8 @@ public class Koleksi {
     private String namaKoleksi;
     private ArrayList<Buku> daftarBuku = new ArrayList<>();
 
-    public Koleksi(String namaKoleksi, ArrayList<Buku> daftarBuku) {
+    public Koleksi(String namaKoleksi) {
         this.namaKoleksi = namaKoleksi;
-        this.daftarBuku = daftarBuku;
     }
 
     public String getNamaKoleksi() {
