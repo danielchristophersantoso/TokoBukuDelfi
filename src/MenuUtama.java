@@ -36,6 +36,7 @@ public class MenuUtama extends JFrame implements ActionListener {
 
         this.add(panel);
         this.setFocusable(false);
+        this.setLocationRelativeTo(null);
         this.setLayout(null);
         this.setSize(880, 495);
         this.setResizable(false);

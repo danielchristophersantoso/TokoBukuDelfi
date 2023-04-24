@@ -2,12 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class HapusBuku extends JFrame implements ActionListener {
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
     private JLabel titleLabel = new JLabel("Hapus Buku");
-    public HapusBuku(){
+    private TokoBuku tokoBuku;
+    private ArrayList<Buku> daftarBuku;
+    public HapusBuku(TokoBuku tokoBuku){
+        this.tokoBuku = tokoBuku;
+        daftarBuku = this.tokoBuku.getDaftarBuku();
         this.setTitle("Hapus Buku");
         menuBar.add(keluarMenuItem);
         keluarMenuItem.addActionListener(this);
@@ -18,6 +23,7 @@ public class HapusBuku extends JFrame implements ActionListener {
         add(titleLabel, BorderLayout.NORTH);
 
         this.setFocusable(false);
+        this.setLocationRelativeTo(null);
         this.setLayout(null);
         this.setSize(880, 495);
         this.setResizable(false);
@@ -27,9 +33,9 @@ public class HapusBuku extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new HapusBuku();
-    }
+//    public static void main(String[] args) {
+//        new HapusBuku();
+//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == keluarMenuItem){
