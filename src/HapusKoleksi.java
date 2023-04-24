@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class HapusKoleksi extends JFrame implements ActionListener {
     private JLabel headerLabel= new JLabel("Hapus Koleksi");
@@ -9,8 +10,23 @@ public class HapusKoleksi extends JFrame implements ActionListener {
     private JTextField namaKoleksiField = new JTextField();
     private JButton hapusKoleksiBtn = new JButton("Hapus Koleksi");
     private JPanel panel = new JPanel();
+
+    public ArrayList<Koleksi> koleksi = new ArrayList<Koleksi>();
+    public ArrayList<Buku> daftarbuku = new ArrayList<Buku>();
+
     public HapusKoleksi(){
         super("Hapus Koleksi");
+
+//        untuk dummy buku sama koleksi
+        Buku buku1 = new Buku("Harry Potter",12,"Jk rowling");
+        Buku buku2 = new Buku("Sherlock Holmes", 12,"Arthur");
+        daftarbuku.add(buku1);
+        daftarbuku.add(buku2);
+        Koleksi koleksi1 = new Koleksi("1", daftarbuku);
+        Koleksi koleksi2 = new Koleksi("2", daftarbuku);
+        koleksi.add(koleksi1);
+        koleksi.add(koleksi2);
+
         add(headerLabel, BorderLayout.NORTH);
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
@@ -56,9 +72,19 @@ public class HapusKoleksi extends JFrame implements ActionListener {
                 int res = JOptionPane.showConfirmDialog(null,"Apakah anda yakin ingin menghapus koleksi ini?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
                 if (res == 0)
                 {
-                    JOptionPane.showMessageDialog(null, "Koleksi berhasil dihapus");
-//                    new MenuUtama();
-//                    dispose();
+                    int ketemu = -1;
+                    for (int i = 0; i < koleksi.size() ; i++) {
+                        if (koleksi.get(i).getNamaKoleksi().equals(namaKoleksiField.getText())) {
+                            koleksi.remove(i);
+                            JOptionPane.showMessageDialog(null, "Koleksi berhasil dihapus");
+                            ketemu = 1;
+                        }
+                    }
+                    if(ketemu == -1)
+                    {
+                        JOptionPane.showMessageDialog(null, "Koleksi tersebut tidak ditemukan");
+                    }
+
                 }
                 int res2 = JOptionPane.showConfirmDialog(null,"Apakah anda ingin menghapus koleksi lainnya?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
                 if(res2 == 0)
