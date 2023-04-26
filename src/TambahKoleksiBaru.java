@@ -2,12 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-public class HapusBuku extends JFrame implements ActionListener {
+public class TambahKoleksiBaru extends JFrame implements ActionListener {
     private TokoBuku tokoBuku;
-    private JLabel titleLabel = new JLabel("Hapus Buku");
-    private ArrayList<Buku> daftarBuku;
     private JMenuBar menuBar = new JMenuBar();
     private JMenu fileMenu = new JMenu("File");
     private JMenuItem[] menuItems = new JMenuItem[]{};
@@ -17,9 +14,8 @@ public class HapusBuku extends JFrame implements ActionListener {
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
     };
-    public HapusBuku(TokoBuku tokoBuku){
+    public TambahKoleksiBaru(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
-        this.setTitle("Hapus Buku");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         for (String l: Labels){
@@ -29,26 +25,16 @@ public class HapusBuku extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
-        setJMenuBar(menuBar);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
-        titleLabel.setHorizontalAlignment(JLabel.CENTER);
-        titleLabel.setBounds(0, 35, 880, 40);
-        add(titleLabel, BorderLayout.NORTH);
-
-        this.setFocusable(false);
-        this.setLocationRelativeTo(null);
-        this.setLayout(null);
-        this.setSize(880, 495);
-        this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
-        this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
-        this.setVisible(true);
+        this.getContentPane().setBackground(new Color(92, 64, 51));
+        setTitle("Tambah Koleksi Baru");
+        setLayout(null);
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setBounds(360,200,880,495);
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-//    public static void main(String[] args) {
-//        new HapusBuku();
-//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() instanceof JMenuItem item){
@@ -60,13 +46,13 @@ public class HapusBuku extends JFrame implements ActionListener {
                     dispose();
                 }
             } else if (option.equals("Hapus Buku")) {
-                // do nothing karena sudah berada pada page yang dituju
-            } else if (option.equals("Tambah Koleksi Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahKoleksiBaru(tokoBuku);
+                    new HapusBuku(tokoBuku);
                     dispose();
                 }
+            } else if (option.equals("Tambah Koleksi Baru")) {
+                // do nothing karena sudah berada pada page yang dituju
             } else if (option.equals("Hapus Koleksi")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {

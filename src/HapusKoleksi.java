@@ -131,11 +131,11 @@ public class HapusKoleksi extends JFrame implements ActionListener {
                     dispose();
                 }
             } else if (option.equals("Tambah Koleksi Baru")) {
-//                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
-//                if (res == JOptionPane.YES_OPTION) {
-//                    new TambahKoleksiBaru(tokoBuku);
-//                    dispose();
-//                }
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahKoleksiBaru(tokoBuku);
+                    dispose();
+                }
             } else if (option.equals("Hapus Koleksi")) {
                 // do nothing karena sudah berada pada page yang dituju
             } else if (option.equals("Tambah Transaksi Baru")) {
