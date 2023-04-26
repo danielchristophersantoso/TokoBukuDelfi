@@ -23,6 +23,7 @@ public class MenuUtama extends JFrame implements ActionListener {
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        titleLabel.setForeground(Color.BLACK);
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         titleLabel.setBounds(0, 20, 880, 40);
         this.add(titleLabel, BorderLayout.NORTH);
@@ -51,7 +52,7 @@ public class MenuUtama extends JFrame implements ActionListener {
         this.setSize(880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        this.getContentPane().setBackground(new Color(92, 64, 51));
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
     }

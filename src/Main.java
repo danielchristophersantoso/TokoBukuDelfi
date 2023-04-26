@@ -52,5 +52,6 @@ public class Main {
 //            System.out.println(tokoBuku.getDaftarTransaksi().get(0).getIdTransaksi());
         //Dummy Data End
         new Masuk(tokoBuku);
+//        new HapusBuku(tokoBuku);
     }
 }
