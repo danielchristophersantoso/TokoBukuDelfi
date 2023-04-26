@@ -75,8 +75,8 @@ public class MenuUtama extends JFrame implements ActionListener {
                 new HapusBuku(tokoBuku);
                 dispose();
             } else if (option.equals("Tambah Koleksi Baru")) {
-//                new TambahKoleksiBaru(tokoBuku);
-//                dispose();
+                new TambahKoleksiBaru(tokoBuku);
+                dispose();
             } else if (option.equals("Hapus Koleksi")) {
                 new HapusKoleksi(tokoBuku);
                 dispose();
