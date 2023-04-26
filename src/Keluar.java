@@ -46,7 +46,7 @@ public class Keluar extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == masukButton){
-            new Masuk(tokoBuku);
+            new Masuk(this.tokoBuku);
             dispose();
         } else if (e.getSource() == akhiriSesiButton){
             int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);

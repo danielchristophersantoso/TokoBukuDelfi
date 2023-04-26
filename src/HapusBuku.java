@@ -7,6 +7,11 @@ import java.util.ArrayList;
 public class HapusBuku extends JFrame implements ActionListener {
     private TokoBuku tokoBuku;
     private JLabel titleLabel = new JLabel("Hapus Buku");
+    private JLabel koleksiLabel = new JLabel("Nama Koleksi: ");
+    private JTextField namaKoleksiTextField = new JTextField();
+    private JLabel bukuLabel = new JLabel("Judul Buku: ");
+    private JTextField judulBukuTextField = new JTextField();
+    private ArrayList<Koleksi> daftarKoleksi;
     private ArrayList<Buku> daftarBuku;
     private JMenuBar menuBar = new JMenuBar();
     private JMenu fileMenu = new JMenu("File");
@@ -19,6 +24,7 @@ public class HapusBuku extends JFrame implements ActionListener {
     };
     public HapusBuku(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
+        this.daftarKoleksi = this.tokoBuku.getDaftarKoleksi();
         this.setTitle("Hapus Buku");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
@@ -53,14 +59,14 @@ public class HapusBuku extends JFrame implements ActionListener {
             if (option.equals("Menu Utama")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new MenuUtama(tokoBuku);
+                    new MenuUtama(this.tokoBuku);
                     dispose();
                 }
             }
             else if (option.equals("Tambah Buku Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahBukuBaru(tokoBuku);
+                    new TambahBukuBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Hapus Buku")) {
@@ -68,37 +74,37 @@ public class HapusBuku extends JFrame implements ActionListener {
             } else if (option.equals("Tambah Koleksi Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahKoleksiBaru(tokoBuku);
+                    new TambahKoleksiBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Hapus Koleksi")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new HapusKoleksi(tokoBuku);
+                    new HapusKoleksi(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tambah Transaksi Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahTransaksiBaru(tokoBuku);
+                    new TambahTransaksiBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tampilkan Riwayat Transaksi")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TampilkanRiwayatTransaksi(tokoBuku);
+                    new TampilkanRiwayatTransaksi(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tambah Pelanggan Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahPelangganBaru(tokoBuku);
+                    new TambahPelangganBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Keluar")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new Keluar(tokoBuku);
+                    new Keluar(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Akhiri Sesi")) {

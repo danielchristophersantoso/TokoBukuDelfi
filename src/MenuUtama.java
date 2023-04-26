@@ -70,30 +70,30 @@ public class MenuUtama extends JFrame implements ActionListener {
         }
         if(check == 1){
             if (option.equals("Tambah Buku Baru")) {
-                new TambahBukuBaru(tokoBuku);
+                new TambahBukuBaru(this.tokoBuku);
                 dispose();
             } else if (option.equals("Hapus Buku")) {
-                new HapusBuku(tokoBuku);
+                new HapusBuku(this.tokoBuku);
                 dispose();
             } else if (option.equals("Tambah Koleksi Baru")) {
-                new TambahKoleksiBaru(tokoBuku);
+                new TambahKoleksiBaru(this.tokoBuku);
                 dispose();
             } else if (option.equals("Hapus Koleksi")) {
-                new HapusKoleksi(tokoBuku);
+                new HapusKoleksi(this.tokoBuku);
                 dispose();
             } else if (option.equals("Tambah Transaksi Baru")) {
-                new TambahTransaksiBaru(tokoBuku);
+                new TambahTransaksiBaru(this.tokoBuku);
                 dispose();
             } else if (option.equals("Tampilkan Riwayat Transaksi")) {
-                new TampilkanRiwayatTransaksi(tokoBuku);
+                new TampilkanRiwayatTransaksi(this.tokoBuku);
                 dispose();
             } else if (option.equals("Tambah Pelanggan Baru")) {
-                new TambahPelangganBaru(tokoBuku);
+                new TambahPelangganBaru(this.tokoBuku);
                 dispose();
             } else if (option.equals("Keluar")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new Keluar(tokoBuku);
+                    new Keluar(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Akhiri Sesi")) {
