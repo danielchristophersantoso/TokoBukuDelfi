@@ -9,8 +9,6 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     private JLabel headerLabel= new JLabel("Tambah Pelanggan Baru");
     private JLabel namaLabel = new JLabel("Nama");
     private JTextField namaField = new JTextField();
-//    private JLabel jumlahBukuLabel = new JLabel("Jumlah Buku");
-//    private JTextField jumlahBukuField = new JTextField();
     private JPanel panel = new JPanel();
     private JButton tambahButton = new JButton("Tambah");
     private ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
@@ -35,14 +33,6 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
-        //dummy local pelanggan
-        Pelanggan pelanggan1 = new Pelanggan("Pelanggan1", "PL0001", 12);
-        Pelanggan pelanggan2 = new Pelanggan("Pelanggan2", "PL0002", 10);
-        Pelanggan pelanggan3 = new Pelanggan("Pelanggan3", "PL0003", 8);
-        daftarPelanggan.add(pelanggan1);
-        daftarPelanggan.add(pelanggan2);
-        daftarPelanggan.add(pelanggan3);
-
 
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
@@ -90,18 +80,17 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
             else
             {
                 String nama = namaField.getText();
-                String ID = String.format("PL%03d",daftarPelanggan.size()+1);
-//                String jumlahBuku = jumlahBukuField.getText();
-                //Gua ubah jdi string, ini sebenernya dia cmn butuh nama, tar yg id nya digenerate pada saat buttonnya diklik
+                String ID = String.format("PL%03d",this.tokoBuku.getDaftarPelanggan().size()+1);
 
                 Pelanggan pelanggan = new Pelanggan(nama, ID);
-                daftarPelanggan.add(pelanggan);
+                this.tokoBuku.getDaftarPelanggan().add(pelanggan);
                 JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
                 System.out.println("ID = " + ID);
                 int res = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan data lagi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
 
                 //yes = 0 , no = 1
                 if (res==1) {
+                    new MenuUtama(tokoBuku);
                     dispose();
                 } else if (res==0) {
                     namaField.setText("");

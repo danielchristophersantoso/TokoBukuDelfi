@@ -8,8 +8,8 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
     private JLabel headerLabel= new JLabel("Tambah Transaksi Baru");
     private JLabel namaPelangganLabel = new JLabel("Nama Pelanggan");
     private JTextField namaPelangganField = new JTextField();
-    private JLabel IDPelanggan = new JLabel("ID Pelanggan");
-    private JTextField IDPelangganField = new JTextField();
+//    private JLabel IDPelanggan = new JLabel("ID Pelanggan");
+//    private JTextField IDPelangganField = new JTextField();
     private JLabel namaBukuLabel = new JLabel("Nama Buku");
     private JComboBox dropDownListBuku = new JComboBox();
     private JLabel jumlahBukuLabel = new JLabel("Jumlah Buku");
@@ -50,34 +50,29 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         namaPelangganField.setBounds(170,30,200,30);
         namaPelangganField.setForeground(Color.BLACK);
         panel.add(namaPelangganField);
-        IDPelanggan.setBounds(35,80,200,30);
-        IDPelanggan.setForeground(Color.BLACK);
-        panel.add(IDPelanggan);
-        IDPelangganField.setBounds(170,80,200,30);
-        IDPelangganField.setForeground(Color.BLACK);
-        panel.add(IDPelangganField);
-        namaBukuLabel.setBounds(35,130,200,30);
+
+        namaBukuLabel.setBounds(35,80,200,30);
         namaBukuLabel.setForeground(Color.BLACK);
         panel.add(namaBukuLabel);
-        dropDownListBuku.setBounds(170,130,200,30);
+        dropDownListBuku.setBounds(170,80,200,30);
         dropDownListBuku.setForeground(Color.BLACK);
         panel.add(dropDownListBuku);
-        jumlahBukuLabel.setBounds(35,180,200,30);
+        jumlahBukuLabel.setBounds(35,130,200,30);
         jumlahBukuLabel.setForeground(Color.BLACK);
         panel.add(jumlahBukuLabel);
 
-        jumlahBukuField.setBounds(170,180,200,30);
+        jumlahBukuField.setBounds(170,130,200,30);
         jumlahBukuField.setForeground(Color.BLACK);
         panel.add(jumlahBukuField);
         tambahTransaksibtn.addActionListener(this);
-        tambahTransaksibtn.setBounds(100, 250, 200, 30);
+        tambahTransaksibtn.setBounds(100, 200, 200, 30);
         tambahTransaksibtn.setBackground(Color.BLACK);
         tambahTransaksibtn.setForeground(Color.WHITE);
         panel.add(tambahTransaksibtn);
 
         panel.setLayout(null);
         panel.setBackground(Color.GRAY);
-        panel.setBounds(200,80,400,350);
+        panel.setBounds(200,80,400,300);
         add(panel,BorderLayout.CENTER);
 
 
@@ -91,6 +86,26 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == tambahTransaksibtn) {
+            String namaPelanggan = namaPelangganField.getText();
+            int ketemu = -1;
+            int index = -1;
+            for (int i = 0; i < this.tokoBuku.getDaftarPelanggan().size(); i++) {
+                if (namaPelanggan.equals(this.tokoBuku.getDaftarPelanggan().get(i).getNama())) {
+                    ketemu = 1;
+                    index = i;
+                }
+            }
+            if(ketemu == -1)
+            {
+                int res = JOptionPane.showConfirmDialog(null, "Pelanggan tidak ditemukan, mohon daftarkan pelanggan terlebih dahulu, apakah anda ingin ke menu tambah pelanggan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahPelangganBaru(tokoBuku);
+                    dispose();
+                }
+            }
+            String IDPelanggan = this.tokoBuku.getDaftarPelanggan().get(index).getId();
+        }
         if(e.getSource() instanceof JMenuItem item){
             String option = item.getText();
             if (option.equals("Menu Utama")) {

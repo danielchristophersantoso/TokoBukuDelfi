@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        String namaKasir = new String("Budi Budiman");
+        String namaKasir = new String("");
         String idKasir = new String("BD1981");
-        String passwordKasir = new String("akuCintaOOP123");
+        String passwordKasir = new String("");
         Kasir kasir = new Kasir(namaKasir, idKasir, passwordKasir);
         TokoBuku tokoBuku = new TokoBuku(kasir);
         //Dummy Data Start
@@ -33,11 +33,11 @@ public class Main {
             //Cek data buku masuk/ga
 //            System.out.println(tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku().get(0).getJudulBuku());
             //Add Pelanggan
-            Pelanggan pelanggan0 = new Pelanggan("Daniel", "12345");
+            Pelanggan pelanggan0 = new Pelanggan("Daniel", "PL001");
             tokoBuku.addDaftarPelanggan(pelanggan0);
-            Pelanggan pelanggan1 = new Pelanggan("Shamgar", "23456");
+            Pelanggan pelanggan1 = new Pelanggan("Shamgar", "PL002");
             tokoBuku.addDaftarPelanggan(pelanggan1);
-            Pelanggan pelanggan2 = new Pelanggan("Delvin", "34567");
+            Pelanggan pelanggan2 = new Pelanggan("Delvin", "PL003");
             tokoBuku.addDaftarPelanggan(pelanggan2);
             //Cek data pelanggan masuk/ga
 //            System.out.println(tokoBuku.getDaftarPelanggan().get(0).getNama());
