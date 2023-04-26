@@ -6,34 +6,40 @@ import java.awt.event.ActionListener;
 public class MenuUtama extends JFrame implements ActionListener {
     private TokoBuku tokoBuku;
     private JMenuBar menuBar = new JMenuBar();
-    private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
+    private JMenu fileMenu = new JMenu("File");
     private JLabel titleLabel = new JLabel("Menu Utama");
     private JPanel panel = new JPanel();
-    private String[] btnLabels = new String[] {
-            "Tambah Buku Baru", "Hapus Buku ", "Tambah Koleksi Baru",
-            "Hapus Koleksi", "Tampilkan Riwayat Transaksi",
-            "Tambah Transaksi Baru", "Tambah Pelanggan Baru", "Keluar"
+    private String[] Labels = new String[] {
+            "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Hapus Koleksi", "Tambah Transaksi Baru",
+            "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
+            "Keluar", "Akhiri Sesi"
     };
+    private JMenuItem[] menuItems = new JMenuItem[]{};
     private JButton[] buttons = new JButton[]{};
     public MenuUtama(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
         this.setTitle("Menu Utama");
-        menuBar.add(keluarMenuItem);
-        keluarMenuItem.addActionListener(this);
+        menuBar.add(fileMenu);
         setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
-        titleLabel.setBounds(0, 35, 880, 40);
+        titleLabel.setBounds(0, 20, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
-        panel.setBounds(290, 100, 300, 300);
-        panel.setBackground(Color.gray);
-        panel.setLayout(new GridLayout(8, 1));
+        panel.setBounds(240, 80, 400, 330);
+        panel.setOpaque(false);
+        panel.setLayout(new GridLayout(9, 1, 0, 3));
 
-        for (String l: btnLabels){
+        for (String l: Labels){
             JButton btn = new JButton(l);
             btn.addActionListener(this);
             btn.setFocusable(false);
             panel.add(btn);
+            JMenuItem item = new JMenuItem(l);
+            item.addActionListener(this);
+            item.setFocusable(false);
+            fileMenu.add(item);
+            fileMenu.addSeparator();
         }
 
         this.add(panel);
@@ -50,10 +56,41 @@ public class MenuUtama extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == keluarMenuItem){
-            int res = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
-            if (res == JOptionPane.YES_OPTION) {
-                System.exit(0);
+        String option = null;
+        Integer check = null;
+        if(e.getSource() instanceof JMenuItem item){
+            option = item.getText();
+            check = 1;
+        } else if (e.getSource() instanceof JButton btn){
+            option = btn.getText();
+            check = 1;
+        }
+        if(check == 1){
+            if (option.equals("Tambah Buku Baru")) {
+
+            } else if (option.equals("Hapus Buku")) {
+
+            } else if (option.equals("Tambah Koleksi Baru")) {
+
+            } else if (option.equals("Hapus Koleksi")) {
+
+            } else if (option.equals("Tambah Transaksi Baru")) {
+
+            } else if (option.equals("Tampilkan Riwayat Transaksi")) {
+
+            } else if (option.equals("Tambah Pelanggan Baru")) {
+
+            } else if (option.equals("Keluar")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new Keluar(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Akhiri Sesi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
             }
         }
     }

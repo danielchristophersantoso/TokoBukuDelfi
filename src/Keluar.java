@@ -4,26 +4,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Keluar extends JFrame implements ActionListener {
-    private JMenuBar menuBar = new JMenuBar();
-    private JMenuItem keluarMenuItem = new JMenuItem("Keluar");
-    private JLabel titleLabel = new JLabel("Berhasil Keluar");
+    private TokoBuku tokoBuku;
+    private JLabel titleLabel = new JLabel("Berhasil Keluar!");
     private JPanel mainPanel = new JPanel();
     private JButton masukButton = new JButton("Masuk");
-    public Keluar() {
+    private JButton akhiriSesiButton = new JButton("Akhiri Sesi");
+    public Keluar(TokoBuku tokoBuku) {
+        this.tokoBuku = tokoBuku;
         this.setTitle("Keluar");
-        menuBar.add(keluarMenuItem);
-        keluarMenuItem.addActionListener(this);
-        setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
-        titleLabel.setBounds(0, 80, 880, 40);
+        titleLabel.setBounds(0, 140, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
         masukButton.setForeground(Color.WHITE);
         masukButton.setBackground(Color.black);
         masukButton.addActionListener(this);
         masukButton.setFocusable(false);
         mainPanel.add(masukButton, BorderLayout.CENTER);
-        mainPanel.setBounds(0, 220, 880, 295);
+        mainPanel.setBounds(0, 240, 880, 295);
         mainPanel.setBackground(Color.LIGHT_GRAY);
         mainPanel.setFocusable(false);
         this.add(mainPanel, BorderLayout.CENTER);
@@ -38,18 +36,8 @@ public class Keluar extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new Keluar();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == keluarMenuItem){
-            int res = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
-            if (res == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            }
-        }
         if (e.getSource() == masukButton){
             new Masuk();
             dispose();

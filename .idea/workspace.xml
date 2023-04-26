@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pelanggan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pelanggan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TambahPelangganBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TokoBuku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TokoBuku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuUtama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuUtama.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,22 +68,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="HapusKoleksi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HapusKoleksi" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Keluar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Keluar" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Masuk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Masuk" />
       <module name="TokoBukuDelfi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,9 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HapusKoleksi" />
         <item itemvalue="Application.Keluar" />
-        <item itemvalue="Application.Masuk" />
         <item itemvalue="Application.MenuUtama" />
       </list>
     </recent_temporary>
