@@ -12,7 +12,7 @@ public class HapusBuku extends JFrame implements ActionListener {
     private JMenu fileMenu = new JMenu("File");
     private JMenuItem[] menuItems = new JMenuItem[]{};
     private String[] Labels = new String[] {
-            "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Menu Utama", "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
             "Hapus Koleksi", "Tambah Transaksi Baru",
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
@@ -31,6 +31,7 @@ public class HapusBuku extends JFrame implements ActionListener {
         }
         setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        titleLabel.setForeground(Color.BLACK);
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         titleLabel.setBounds(0, 35, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
@@ -41,19 +42,22 @@ public class HapusBuku extends JFrame implements ActionListener {
         this.setSize(880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        this.getContentPane().setBackground(new Color(92, 64, 51));
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
     }
-
-//    public static void main(String[] args) {
-//        new HapusBuku();
-//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() instanceof JMenuItem item){
             String option = item.getText();
-            if (option.equals("Tambah Buku Baru")) {
+            if (option.equals("Menu Utama")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new MenuUtama(tokoBuku);
+                    dispose();
+                }
+            }
+            else if (option.equals("Tambah Buku Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
                     new TambahBukuBaru(tokoBuku);
