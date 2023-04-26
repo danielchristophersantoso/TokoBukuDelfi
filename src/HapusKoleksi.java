@@ -36,19 +36,6 @@ public class HapusKoleksi extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
-//        untuk dummy buku sama koleksi
-        Buku buku1 = new Buku("Harry Potter",12,"Jk rowling");
-        Buku buku2 = new Buku("Sherlock Holmes", 12,"Arthur");
-        daftarbuku.add(buku1);
-        daftarbuku.add(buku2);
-        Koleksi koleksi1 = new Koleksi("1");
-        koleksi1.addDaftarBuku(buku1);
-        koleksi1.addDaftarBuku(buku2);
-        Koleksi koleksi2 = new Koleksi("2");
-        koleksi2.addDaftarBuku(buku1);
-        koleksi2.addDaftarBuku(buku2);
-        koleksi.add(koleksi1);
-        koleksi.add(koleksi2);
 
         add(headerLabel, BorderLayout.NORTH);
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -67,12 +54,12 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         hapusKoleksiBtn.setBounds(130, 140, 150, 30);
         panel.add(hapusKoleksiBtn);
 
-        panel.setBackground(Color.GRAY);
+        panel.setBackground(new Color(0,0,0,100));
         panel.setBounds(200,100,400,200);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
-        getContentPane().setBackground(Color.lightGray);
+        this.getContentPane().setBackground(new Color(92, 64, 51));
         setLayout(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -93,12 +80,13 @@ public class HapusKoleksi extends JFrame implements ActionListener {
             else
             {
                 int res = JOptionPane.showConfirmDialog(null,"Apakah anda yakin ingin menghapus koleksi ini?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
+                int res2 = -1;
                 if (res == 0)
                 {
                     int ketemu = -1;
-                    for (int i = 0; i < koleksi.size() ; i++) {
-                        if (koleksi.get(i).getNamaKoleksi().equals(namaKoleksiField.getText())) {
-                            koleksi.remove(i);
+                    for (int i = 0; i < this.tokoBuku.getDaftarKoleksi().size() ; i++) {
+                        if (this.tokoBuku.getDaftarKoleksi().get(i).getNamaKoleksi().equals(namaKoleksiField.getText())){
+                            this.tokoBuku.getDaftarKoleksi().remove(i);
                             JOptionPane.showMessageDialog(null, "Koleksi berhasil dihapus");
                             ketemu = 1;
                         }
@@ -107,12 +95,17 @@ public class HapusKoleksi extends JFrame implements ActionListener {
                     {
                         JOptionPane.showMessageDialog(null, "Koleksi tersebut tidak ditemukan");
                     }
-
+                    res2 = JOptionPane.showConfirmDialog(null,"Apakah anda ingin menghapus koleksi lainnya?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
                 }
-                int res2 = JOptionPane.showConfirmDialog(null,"Apakah anda ingin menghapus koleksi lainnya?","Hapus Koleksi",JOptionPane.YES_NO_OPTION);
+
                 if(res2 == 0)
                 {
                     namaKoleksiField.setText("");
+                }
+                else if(res2 == 1)
+                {
+                    dispose();
+                    new MenuUtama(this.tokoBuku);
                 }
             }
         }
@@ -121,26 +114,26 @@ public class HapusKoleksi extends JFrame implements ActionListener {
             if (option.equals("Menu Utama")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new MenuUtama(tokoBuku);
+                    new MenuUtama(this.tokoBuku);
                     dispose();
                 }
             }
             else if (option.equals("Tambah Buku Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahBukuBaru(tokoBuku);
+                    new TambahBukuBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Hapus Buku")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new HapusBuku(tokoBuku);
+                    new HapusBuku(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tambah Koleksi Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahKoleksiBaru(tokoBuku);
+                    new TambahKoleksiBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Hapus Koleksi")) {
@@ -148,25 +141,25 @@ public class HapusKoleksi extends JFrame implements ActionListener {
             } else if (option.equals("Tambah Transaksi Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahTransaksiBaru(tokoBuku);
+                    new TambahTransaksiBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tampilkan Riwayat Transaksi")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TampilkanRiwayatTransaksi(tokoBuku);
+                    new TampilkanRiwayatTransaksi(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Tambah Pelanggan Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new TambahPelangganBaru(tokoBuku);
+                    new TambahPelangganBaru(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Keluar")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
-                    new Keluar(tokoBuku);
+                    new Keluar(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Akhiri Sesi")) {
