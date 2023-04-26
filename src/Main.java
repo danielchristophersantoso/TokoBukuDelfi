@@ -51,7 +51,6 @@ public class Main {
             //Cek data transaksi masuk/ga
 //            System.out.println(tokoBuku.getDaftarTransaksi().get(0).getIdTransaksi());
         //Dummy Data End
-        new MenuUtama(tokoBuku);
-//        new Masuk(tokoBuku);
+        new Masuk(tokoBuku);
     }
 }

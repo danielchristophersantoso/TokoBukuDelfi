@@ -21,8 +21,14 @@ public class Keluar extends JFrame implements ActionListener {
         masukButton.addActionListener(this);
         masukButton.setFocusable(false);
         mainPanel.add(masukButton, BorderLayout.CENTER);
-        mainPanel.setBounds(0, 240, 880, 295);
-        mainPanel.setBackground(Color.LIGHT_GRAY);
+        akhiriSesiButton.setForeground(Color.WHITE);
+        akhiriSesiButton.setBackground(Color.black);
+        akhiriSesiButton.addActionListener(this);
+        akhiriSesiButton.setFocusable(false);
+        mainPanel.add(akhiriSesiButton, BorderLayout.CENTER);
+        mainPanel.setBounds(200, 240, 480, 35);
+        mainPanel.setOpaque(false);
+        mainPanel.setLayout(new GridLayout(1, 2, 20, 0));
         mainPanel.setFocusable(false);
         this.add(mainPanel, BorderLayout.CENTER);
         this.setFocusable(false);
@@ -39,7 +45,7 @@ public class Keluar extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == masukButton){
-            new Masuk();
+            new Masuk(tokoBuku);
             dispose();
         }
     }

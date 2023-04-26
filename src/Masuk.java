@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Masuk extends JFrame implements ActionListener {
+    private TokoBuku tokoBuku;
     private JLabel label = new JLabel("Masuk");
     private JPanel panel = new JPanel();
     private JButton button = new JButton("Masuk");
@@ -12,7 +13,8 @@ public class Masuk extends JFrame implements ActionListener {
     private JTextField usernameField = new JTextField();
     private JLabel passwordLabel = new JLabel("Password");
     private JTextField passwordField = new JPasswordField();
-    public Masuk() {
+    public Masuk(TokoBuku tokoBuku) {
+        this.tokoBuku = tokoBuku;
         setTitle("Toko Buku Delfi");
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 30));
@@ -55,12 +57,12 @@ public class Masuk extends JFrame implements ActionListener {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals("Harvianto") && password.equals("H123"))
+        if (username.equals(tokoBuku.getKasir().getNama()) && password.equals(tokoBuku.getKasir().getPassword())) {
             JOptionPane.showMessageDialog(null, "Berhasil Masuk!");
+            new MenuUtama(tokoBuku);
+            dispose();
+        }
         else
             JOptionPane.showMessageDialog(null, "Nama atau Password salah!");
     }
-//    public static void main(String[] args) {
-//        new Masuk();
-//    }
 }
