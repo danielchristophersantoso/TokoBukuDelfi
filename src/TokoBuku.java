@@ -8,6 +8,14 @@ public class TokoBuku {
 
     public TokoBuku(Kasir kasir) {
         this.kasir = kasir;
+
+        // dummy pelanggan
+        Pelanggan pelanggan1 = new Pelanggan("Pelanggan1", "PL0001", 12);
+        Pelanggan pelanggan2 = new Pelanggan("Pelanggan2", "PL0002", 10);
+        Pelanggan pelanggan3 = new Pelanggan("Pelanggan3", "PL0003", 8);
+        daftarPelanggan.add(pelanggan1);
+        daftarPelanggan.add(pelanggan2);
+        daftarPelanggan.add(pelanggan3);
     }
 
     public Kasir getKasir() {
