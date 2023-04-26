@@ -3,6 +3,11 @@ public class Pelanggan {
     private String id;
     private Integer jumlahBuku;
 
+    public Pelanggan(String nama, String id, int jumlahBuku) {
+        this.nama = nama;
+        this.id = id;
+        this.jumlahBuku = jumlahBuku;
+    }
     public Pelanggan(String nama, String id) {
         this.nama = nama;
         this.id = id;
