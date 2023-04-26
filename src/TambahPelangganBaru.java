@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class TambahPelangganBaru extends JFrame implements ActionListener {
+    private TokoBuku tokoBuku;
     private JLabel headerLabel= new JLabel("Tambah Pelanggan Baru");
     private JLabel namaLabel = new JLabel("Nama");
     private JTextField namaField = new JTextField();
@@ -13,10 +14,27 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     private JPanel panel = new JPanel();
     private JButton tambahButton = new JButton("Tambah");
     private ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
-
-    public TambahPelangganBaru(){
-        super("Tambah Pelanggan Baru");
-
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu fileMenu = new JMenu("File");
+    private JMenuItem[] menuItems = new JMenuItem[]{};
+    private String[] Labels = new String[] {
+            "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Hapus Koleksi", "Tambah Transaksi Baru",
+            "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
+            "Keluar", "Akhiri Sesi"
+    };
+    public TambahPelangganBaru(TokoBuku tokoBuku){
+        this.tokoBuku = tokoBuku;
+        this.setTitle("Tambah Pelanggan Baru");
+        menuBar.add(fileMenu);
+        this.setJMenuBar(menuBar);
+        for (String l: Labels){
+            JMenuItem item = new JMenuItem(l);
+            item.addActionListener(this);
+            item.setFocusable(false);
+            fileMenu.add(item);
+            fileMenu.addSeparator();
+        }
         //dummy local pelanggan
         Pelanggan pelanggan1 = new Pelanggan("Pelanggan1", "PL0001", 12);
         Pelanggan pelanggan2 = new Pelanggan("Pelanggan2", "PL0002", 10);
@@ -92,10 +110,59 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
 
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new TambahPelangganBaru();
+        if(e.getSource() instanceof JMenuItem item){
+            String option = item.getText();
+            if (option.equals("Tambah Buku Baru")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahBukuBaru(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Hapus Buku")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new HapusBuku(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Koleksi Baru")) {
+//                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+//                if (res == JOptionPane.YES_OPTION) {
+//                    new TambahKoleksiBaru(tokoBuku);
+//                    dispose();
+//                }
+            } else if (option.equals("Hapus Koleksi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new HapusKoleksi(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Transaksi Baru")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahTransaksiBaru(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tampilkan Riwayat Transaksi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TampilkanRiwayatTransaksi(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Pelanggan Baru")) {
+                // do nothing karena sudah berada pada page yang dituju
+            } else if (option.equals("Keluar")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new Keluar(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Akhiri Sesi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
+            }
+        }
     }
 }
 

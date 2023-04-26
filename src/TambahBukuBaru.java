@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 
 public class TambahBukuBaru extends JFrame implements ActionListener {
+    private TokoBuku tokoBuku;
     private JLabel labelTambahBuku = new JLabel("Tambah Buku Baru");
     private JLabel labelJudulBuku = new JLabel("Judul Buku");
     private JLabel labelPenulis = new JLabel("Penulis Buku");
@@ -21,8 +22,27 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
     private JTextField fieldKoleksi = new JTextField();
     private JPanel panel = new JPanel();
     private JButton btnTambahBuku = new JButton("Tambah Buku");
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu fileMenu = new JMenu("File");
+    private JMenuItem[] menuItems = new JMenuItem[]{};
+    private String[] Labels = new String[] {
+            "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Hapus Koleksi", "Tambah Transaksi Baru",
+            "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
+            "Keluar", "Akhiri Sesi"
+    };
 
-    public TambahBukuBaru() {
+    public TambahBukuBaru(TokoBuku tokoBuku) {
+        this.tokoBuku = tokoBuku;
+        menuBar.add(fileMenu);
+        this.setJMenuBar(menuBar);
+        for (String l: Labels){
+            JMenuItem item = new JMenuItem(l);
+            item.addActionListener(this);
+            item.setFocusable(false);
+            fileMenu.add(item);
+            fileMenu.addSeparator();
+        }
         labelTambahBuku.setFont(new Font("Arial", Font.BOLD, 30));
         labelTambahBuku.setHorizontalAlignment(SwingConstants.CENTER);
         labelTambahBuku.setBounds(-10,40,880,50);
@@ -88,16 +108,65 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String halaman = fieldJumlahHalaman.getText();
 
-        if (!halaman.matches("[0-9]+")) {
+        if(e.getSource() instanceof JMenuItem item){
+            String option = item.getText();
+            if (option.equals("Tambah Buku Baru")) {
+                // do nothing karena sudah berada pada page yang dituju
+            } else if (option.equals("Hapus Buku")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new HapusBuku(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Koleksi Baru")) {
+//                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+//                if (res == JOptionPane.YES_OPTION) {
+//                    new TambahKoleksiBaru(tokoBuku);
+//                    dispose();
+//                }
+            } else if (option.equals("Hapus Koleksi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new HapusKoleksi(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Transaksi Baru")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahTransaksiBaru(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tampilkan Riwayat Transaksi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TampilkanRiwayatTransaksi(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Pelanggan Baru")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahPelangganBaru(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Keluar")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin keluar? Anda akan diminta untuk memasukkan id dan password anda kembali.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new Keluar(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Akhiri Sesi")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin mengakhiri sesi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
+            }
+        }
+        else if (!halaman.matches("[0-9]+")) {
             JOptionPane.showMessageDialog(null, "Input Angka!");
         } else {
             if (Integer.parseInt(halaman) <= 0) {
                 JOptionPane.showMessageDialog(null, "Input Angka Lebih dari 0!");
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new TambahBukuBaru();
     }
 }
