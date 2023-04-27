@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
         String namaKasir = new String("");
@@ -42,14 +44,15 @@ public class Main {
             //Cek data pelanggan masuk/ga
 //            System.out.println(tokoBuku.getDaftarPelanggan().get(0).getNama());
             //Add Transaksi
-            Transaksi transaksi0 = new Transaksi("AAA", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(0).getNama(), tokoBuku.getDaftarPelanggan().get(0).getId(), 1200000.0);
+            Transaksi transaksi0 = new Transaksi("Trans001", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(0).getNama(), tokoBuku.getDaftarPelanggan().get(0).getId(), 120000.0);
             tokoBuku.addDaftarTransaksi(transaksi0);
-            Transaksi transaksi1 = new Transaksi("BBB", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(1).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(1).getNama(), tokoBuku.getDaftarPelanggan().get(1).getId(), 1700000.0);
+            Transaksi transaksi1 = new Transaksi("Trans002", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(1).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(1).getNama(), tokoBuku.getDaftarPelanggan().get(1).getId(), 170000.0);
             tokoBuku.addDaftarTransaksi(transaksi1);
-            Transaksi transaksi2 = new Transaksi("CCC", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(2).getNama(), tokoBuku.getDaftarPelanggan().get(2).getId(), 1900000.0);
+            Transaksi transaksi2 = new Transaksi("Trans003", tokoBuku.getKasir().getNama(), tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku(), tokoBuku.getDaftarPelanggan().get(2).getNama(), tokoBuku.getDaftarPelanggan().get(2).getId(), 190000.0);
             tokoBuku.addDaftarTransaksi(transaksi2);
             //Cek data transaksi masuk/ga
 //            System.out.println(tokoBuku.getDaftarTransaksi().get(0).getIdTransaksi());
+//            System.out.println(tokoBuku.getDaftarTransaksi().size());
         //Dummy Data End
 //        new Masuk(tokoBuku);
         new MenuUtama(tokoBuku);
