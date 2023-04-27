@@ -37,20 +37,6 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
-        // untuk dummy transaksi
-        Buku buku1 = new Buku("Harry Potter",12,"Jk rowling");
-        Buku buku2 = new Buku("Sherlock Holmes", 12,"Arthur");
-        daftarbuku.add(buku1);
-        daftarbuku.add(buku2);
-        Transaksi transaksi1 = new Transaksi("1","nama kasir",daftarbuku,"nama pelanggan","1",10000.0);
-        daftartransaksi.add(transaksi1);
-        Buku buku3 = new Buku("Harry Potter",12,"Jk rowling");
-        Buku buku4 = new Buku("Sherlock Holmes", 12,"Arthur");
-        daftarbuku.add(buku3);
-        daftarbuku.add(buku4);
-        Transaksi transaksi2 = new Transaksi("2","nama kasir",daftarbuku,"nama pelanggan","2",11000.0);
-        daftartransaksi.add(transaksi2);
-
 
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
@@ -70,8 +56,8 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
         lihatTransaksi.setForeground(Color.WHITE);
         panel.add(lihatTransaksi);
 
-        for (int i = 0; i < daftartransaksi.size(); i++) {
-            dropdownListTransaksi.addItem(daftartransaksi.get(i).getIdTransaksi());
+        for (int i = 0; i < this.tokoBuku.getDaftarTransaksi().size(); i++) {
+            dropdownListTransaksi.addItem(this.tokoBuku.getDaftarTransaksi().get(i).getIdTransaksi());
         }
 
 
@@ -92,8 +78,8 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == lihatTransaksi)
         {
-            for (int i = 0; i < daftartransaksi.size(); i++) {
-                if (dropdownListTransaksi.getSelectedItem().equals(daftartransaksi.get(i).getIdTransaksi())) {
+            for (int i = 0; i < this.tokoBuku.getDaftarTransaksi().size(); i++) {
+                if (dropdownListTransaksi.getSelectedItem().equals(this.tokoBuku.getDaftarTransaksi().get(i).getIdTransaksi())) {
                     internalFrame = new JFrame("Transaksi " + i+1);
                     JLabel headerLabel = new JLabel("Transaksi " + i+1);
                     headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -102,41 +88,48 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
                     headerLabel.setBounds(0,0,800,80);
                     internalFrame.add(headerLabel, BorderLayout.NORTH);
                     // nama kasir
-                    JLabel namaKasir = new JLabel("Nama Kasir : " + daftartransaksi.get(i).getNamaKasir());
-                    namaKasir.setBounds(35,30,230,30);
+                    JLabel namaKasir = new JLabel("Nama Kasir : " + this.tokoBuku.getDaftarTransaksi().get(i).getNamaKasir());
+                    namaKasir.setBounds(35,70,230,30);
                     namaKasir.setForeground(Color.BLACK);
                     internalFrame.add(namaKasir);
                     // nama pelanggan
-                    JLabel namaPelanggan = new JLabel("Nama Pelanggan : " + daftartransaksi.get(i).getNamaPelanggan());
-                    namaPelanggan.setBounds(35,60,230,30);
+                    JLabel namaPelanggan = new JLabel("Nama Pelanggan : " + this.tokoBuku.getDaftarTransaksi().get(i).getNamaPelanggan());
+                    namaPelanggan.setBounds(35,110,230,30);
                     namaPelanggan.setForeground(Color.BLACK);
                     internalFrame.add(namaPelanggan);
                     // id pelanggan
-                    JLabel idPelanggan = new JLabel("ID Pelanggan : " + daftartransaksi.get(i).getIdPelanggan());
-                    idPelanggan.setBounds(35,90,230,30);
+                    JLabel idPelanggan = new JLabel("ID Pelanggan : " + this.tokoBuku.getDaftarTransaksi().get(i).getIdPelanggan());
+                    idPelanggan.setBounds(35,140,230,30);
                     idPelanggan.setForeground(Color.BLACK);
                     internalFrame.add(idPelanggan);
                     // daftar buku
-                    JLabel daftarBuku = new JLabel();
-                    for (int j = 0; j < daftarbuku.size(); j++) {
-                        daftarBuku.setText("Daftar Buku : " + daftartransaksi.get(i).getDaftarBuku().get(j).getJudulBuku());
-                        daftarBuku.setBounds(35,120,230,30);
-                        daftarBuku.setForeground(Color.BLACK);
-                        internalFrame.add(daftarBuku);
+                    JLabel daftarBuku = new JLabel("Daftar buku :");
+                    JLabel daftarBuku1 = new JLabel();
+                    JLabel daftarBuku2 = new JLabel();
+                    JLabel daftarBuku3 = new JLabel();
+                    JLabel daftarBuku4 = new JLabel();
+                    JLabel daftarBuku5 = new JLabel();
+                    daftarBuku.setBounds(35,170,230,30);
+                    daftarBuku.setForeground(Color.BLACK);
+                    internalFrame.add(daftarBuku);
+                    for (int j = 0; j < this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().size(); j++) {
+                        if(j == 1)
+                        {
+                            daftarBuku1.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
+                            daftarBuku1.setBounds(130,170,230,30);
+                            daftarBuku1.setForeground(Color.BLACK);
+                            internalFrame.add(daftarBuku1);
+                        }
+                        if (j == 2)
+                        {
+                            daftarBuku2.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
+                            daftarBuku2.setBounds(130,170,230,30);
+                            daftarBuku2.setForeground(Color.BLACK);
+                            internalFrame.add(daftarBuku2);
+                        }
 
                     }
-//                    // daftar buku
-//                    JLabel daftarBuku1 = new JLabel("1. " + daftartransaksi.get(i).getDaftarBuku().get(0).getJudulBuku());
-//                    daftarBuku1.setBounds(35,150,230,30);
-//                    daftarBuku1.setForeground(Color.BLACK);
-//                    internalFrame.add(daftarBuku1);
-                    // daftar buku
-//                    JLabel daftarBuku2 = new JLabel("2. " + daftartransaksi.get(i).getDaftarBuku().get(1).getJudulBuku());
-//                    daftarBuku2.setBounds(35,180,230,30);
-//                    daftarBuku2.setForeground(Color.BLACK);
-//                    internalFrame.add(daftarBuku2);
-                    // total harga
-                    JLabel totalHarga = new JLabel("Total Harga : " + daftartransaksi.get(i).getSubTotalTransaksi());
+                    JLabel totalHarga = new JLabel("Total Harga : " + this.tokoBuku.getDaftarTransaksi().get(i).getSubTotalTransaksi());
                     totalHarga.setBounds(35,210,230,30);
                     totalHarga.setForeground(Color.BLACK);
                     internalFrame.add(totalHarga);
@@ -149,6 +142,10 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
                     internalFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                     internalFrame.setResizable(false);
                     add(internalFrame);
+                }
+                else
+                {
+                    System.out.println("Tidak ada transaksi dengan ID tersebut");
                 }
             }
         }
