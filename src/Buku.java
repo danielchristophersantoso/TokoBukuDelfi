@@ -4,6 +4,12 @@ public class Buku {
     private String penulis;
     private Integer jumlahBuku;
 
+    public Buku(String judulBuku, Integer jumlahHalaman, String penulis, Integer jumlahBuku) {
+        this.judulBuku = judulBuku;
+        this.jumlahHalaman = jumlahHalaman;
+        this.penulis = penulis;
+        this.jumlahBuku = jumlahBuku;
+    }
     public Buku(String judulBuku, Integer jumlahHalaman, String penulis) {
         this.judulBuku = judulBuku;
         this.jumlahHalaman = jumlahHalaman;

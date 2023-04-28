@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        String namaKasir = new String("");
+        String namaKasir = new String("Kasir1");
         String idKasir = new String("BD1981");
         String passwordKasir = new String("");
         Kasir kasir = new Kasir(namaKasir, idKasir, passwordKasir);
@@ -20,17 +20,17 @@ public class Main {
             //Cek data koleksi masuk/ga
 //            System.out.println(tokoBuku.getDaftarKoleksi().get(0).getNamaKoleksi());
             //Add Buku
-            Buku buku0 = new Buku("Buku0", 100, "Daniel");
+            Buku buku0 = new Buku("Buku0", 100, "Daniel",10);
             tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku().add(buku0);
-            Buku buku0a = new Buku("Buku0a", 100, "Daniel");
+            Buku buku0a = new Buku("Buku0a", 100, "Daniel",10);
             tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku().add(buku0a);
-            Buku buku1 = new Buku("Buku1", 100, "Shamgod");
+            Buku buku1 = new Buku("Buku1", 100, "Shamgod",10);
             tokoBuku.getDaftarKoleksi().get(1).getDaftarBuku().add(buku1);
-            Buku buku1a = new Buku("Buku1a", 100, "Shamgod");
+            Buku buku1a = new Buku("Buku1a", 100, "Shamgod",10);
             tokoBuku.getDaftarKoleksi().get(1).getDaftarBuku().add(buku1a);
-            Buku buku2 = new Buku("Buku2", 100, "Delpin");
+            Buku buku2 = new Buku("Buku2", 100, "Delpin",10);
             tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku().add(buku2);
-            Buku buku2a = new Buku("Buku2a", 100, "Delpin");
+            Buku buku2a = new Buku("Buku2a", 100, "Delpin",10);
             tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku().add(buku2a);
             //Cek data buku masuk/ga
 //            System.out.println(tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku().get(0).getJudulBuku());
