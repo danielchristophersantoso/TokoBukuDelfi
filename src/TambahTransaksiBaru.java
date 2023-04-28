@@ -163,7 +163,6 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
             }
             else
             {
-                int banyakbuku = 0;
                 ArrayList<String> daftarJudulBuku = new ArrayList<>();
                 ArrayList<Integer> daftarJumlahBuku = new ArrayList<>();
                 ArrayList<Buku> daftarBukuTransaksi = new ArrayList<>();
@@ -172,6 +171,13 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                 Double randomharga = Math.floor(Math.random() * (max - min + 1) + min);
                 Double subtotaltransaksi = 0.0;
                 String IDPelanggan = this.tokoBuku.getDaftarPelanggan().get(index).getId();
+
+                // validasi kalo semua field kosong
+                if (dropDownListBuku.getSelectedItem().toString().equals("") && jumlahBukuField.getText().equals("") && dropDownListBuku2.getSelectedItem().toString().equals("") && jumlahBukuField2.getText().equals("") && dropDownListBuku3.getSelectedItem().toString().equals("") && jumlahBukuField3.getText().equals("") && dropDownListBuku4.getSelectedItem().toString().equals("") && jumlahBukuField4.getText().equals("") && dropDownListBuku5.getSelectedItem().toString().equals("") && jumlahBukuField5.getText().equals(""))
+                {
+                    JOptionPane.showMessageDialog(null, "ERROR, semua field kosong");
+                    return;
+                }
 
                 // validasi kalo dropdownlist tidak kosong tapi jumlah buku field kosong
                 if (dropDownListBuku.getSelectedItem().toString().equals("") && !jumlahBukuField.getText().equals(""))
@@ -306,28 +312,46 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     totalbukuyangdibeli += jumlahBuku;
                 }
 
-                String ID = String.format("Trans%03d",this.tokoBuku.getDaftarTransaksi().size()+1);
-//                nama kasirnya gak dapet...
+                String ID = String.format("Trans%03d", this.tokoBuku.getDaftarTransaksi().size()+1);
                 String namaKasir = tokoBuku.getKasir().getNama();
                 subtotaltransaksi = totalbukuyangdibeli * randomharga;
 
-                System.out.println("ID = " + ID);
-                System.out.println("nama kasir = " + namaKasir);
-                System.out.println("daftar buku transaksi = ");
-                for (int i = 0; i < daftarBukuTransaksi.size(); i++) {
-                    System.out.println(daftarBukuTransaksi.get(i).getJudulBuku());
-                }
-                System.out.println("nama pelanggan = " + namaPelanggan);
-                System.out.println("ID pelanggan = " + IDPelanggan);
-                System.out.println("total buku yang dibeli = " + totalbukuyangdibeli);
-                System.out.println("harga satuan = " + randomharga);
-                System.out.println("Subtotal transaksi = " + subtotaltransaksi);
+//                System.out.println("ID = " + ID);
+//                System.out.println("nama kasir = " + namaKasir);
+//                System.out.println("daftar buku transaksi = ");
+//                for (int i = 0; i < daftarBukuTransaksi.size(); i++) {
+//                    System.out.println(daftarBukuTransaksi.get(i).getJudulBuku());
+//                }
+//                System.out.println("nama pelanggan = " + namaPelanggan);
+//                System.out.println("ID pelanggan = " + IDPelanggan);
+//                System.out.println("total buku yang dibeli = " + totalbukuyangdibeli);
+//                System.out.println("harga satuan = " + randomharga);
+//                System.out.println("Subtotal transaksi = " + subtotaltransaksi);
+
                 Transaksi transaksi = new Transaksi(ID, namaKasir, daftarBukuTransaksi,namaPelanggan,IDPelanggan,subtotaltransaksi);
                 this.tokoBuku.getDaftarTransaksi().add(transaksi);
                 JOptionPane.showMessageDialog(null, "Transaksi berhasil ditambahkan");
+                int yesno = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan transaksi lagi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (yesno == 1)
+                {
+                    new MenuUtama(tokoBuku);
+                    dispose();
+                }
+                else if(yesno == 0)
+                {
+                    namaPelangganField.setText("");
+                    jumlahBukuField.setText("");
+                    jumlahBukuField2.setText("");
+                    jumlahBukuField3.setText("");
+                    jumlahBukuField4.setText("");
+                    jumlahBukuField5.setText("");
+                    dropDownListBuku.setSelectedIndex(0);
+                    dropDownListBuku2.setSelectedIndex(0);
+                    dropDownListBuku3.setSelectedIndex(0);
+                    dropDownListBuku4.setSelectedIndex(0);
+                    dropDownListBuku5.setSelectedIndex(0);
 
-
-
+                }
             }
         }
         if(e.getSource() instanceof JMenuItem item){
