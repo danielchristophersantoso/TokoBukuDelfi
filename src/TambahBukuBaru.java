@@ -11,9 +11,11 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
     private JLabel labelPenulis = new JLabel("Penulis Buku");
     private JLabel labelJumlahHalaman = new JLabel("Jumlah Halaman Buku");
     private JLabel labelKoleksi = new JLabel("Koleksi Buku");
+    private JLabel labelJumlahBuku  = new JLabel("Jumlah Buku");
     private JTextField fieldJudulBuku = new JTextField();
     private JTextField fieldPenulis = new JTextField();
     private JTextField fieldJumlahHalaman = new JTextField();
+    private JTextField fieldJumlahBuku = new JTextField();
     private JPanel panel = new JPanel();
     private JButton btnTambahBuku = new JButton("Tambah Buku");
     private JMenuBar menuBar = new JMenuBar();
@@ -52,23 +54,28 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
         labelPenulis.setFont(new Font("Arial", Font.BOLD, 15));
         labelJumlahHalaman.setFont(new Font("Arial", Font.BOLD, 15));
         labelKoleksi.setFont(new Font("Arial", Font.BOLD, 15));
+        labelJumlahBuku.setFont(new Font("Arial", Font.BOLD, 15));
 
-        fieldJudulBuku.setBounds(240, 35, 120, 20);
-        fieldPenulis.setBounds(240, 85, 120, 20);
-        fieldJumlahHalaman.setBounds(240, 135, 120, 20);
+        fieldJudulBuku.setBounds(340, 35, 185, 20);
+        fieldPenulis.setBounds(240, 105, 120, 20);
+        fieldJumlahHalaman.setBounds(240, 155, 120, 20);
+        fieldJumlahBuku.setBounds(580, 155, 140, 20);
 
         panel.add(fieldJudulBuku);
         panel.add(fieldPenulis);
         panel.add(fieldJumlahHalaman);
+        panel.add(fieldJumlahBuku);
 
-        labelJudulBuku.setBounds(35, 20, 150, 50);
+        labelJudulBuku.setBounds(235, 20, 150, 50);
         labelJudulBuku.setForeground(Color.BLACK);
-        labelPenulis.setBounds(35, 70, 150, 50);
+        labelPenulis.setBounds(35, 90, 150, 50);
         labelPenulis.setForeground(Color.BLACK);
-        labelJumlahHalaman.setBounds(35, 120, 200, 50);
+        labelJumlahHalaman.setBounds(35, 140, 200, 50);
         labelJumlahHalaman.setForeground(Color.BLACK);
-        labelKoleksi.setBounds(35, 170, 150, 50);
+        labelKoleksi.setBounds(400, 90, 150, 50);
         labelKoleksi.setForeground(Color.BLACK);
+        labelJumlahBuku.setBounds(400, 140, 200, 50);
+        labelJumlahBuku.setForeground(Color.BLACK);
 
         namaKoleksiComboBox = new JComboBox();
         namaKoleksiComboBox.addItem("Pilih Koleksi");
@@ -76,7 +83,7 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
         for (Koleksi j: daftarKoleksi) {
             namaKoleksiComboBox.addItem(j.getNamaKoleksi());
         }
-        namaKoleksiComboBox.setBounds(240, 183, 120, 25);
+        namaKoleksiComboBox.setBounds(580, 100, 140, 25);
         namaKoleksiComboBox.setFont(new Font("Arial", Font.PLAIN, 12));
         namaKoleksiComboBox.addActionListener(this);
         namaKoleksiComboBox.setFocusable(false);
@@ -86,9 +93,10 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
         panel.add(labelPenulis);
         panel.add(labelJumlahHalaman);
         panel.add(labelKoleksi);
+        panel.add(labelJumlahBuku);
 
         panel.setBackground(new Color(0,0,0,100));
-        panel.setBounds(230, 110, 400,240);
+        panel.setBounds(50, 110, 760,210);
         panel.setOpaque(true);
         panel.setLayout(null);
         add(panel);
@@ -117,14 +125,16 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
             Integer index = namaKoleksiComboBox.getSelectedIndex() - 1;
             String judulBuku = fieldJudulBuku.getText();
             String penulisBuku = fieldPenulis.getText();
-            int jumlahHalaman = Integer.parseInt(fieldJumlahHalaman.getText());
             Koleksi koleksi = this.tokoBuku.getDaftarKoleksi().get(index);
 
-            if (fieldJudulBuku.getText().equals("") || fieldPenulis.getText().equals("") || fieldJumlahHalaman.getText().equals("")) {
+            if (judulBuku.equals("") || penulisBuku.equals("") || fieldJumlahHalaman.getText().equals("") || fieldJumlahBuku.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
                 return;
             } else if (!fieldJumlahHalaman.getText().matches("[0-9]+")) {
                 JOptionPane.showMessageDialog(null, "Jumlah Halaman tidak valid");
+                return;
+            } else if (!fieldJumlahBuku.getText().matches("[0-9]+")) {
+                JOptionPane.showMessageDialog(null, "Jumlah Buku tidak valid");
                 return;
             } else if (index == -1) {
                 JOptionPane.showMessageDialog(null, "Nama Koleksi tidak valid");
@@ -137,7 +147,15 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Buku sudah terdaftar");
                     return;
                 } else {
-                    Buku buku = new Buku(judulBuku, jumlahHalaman, penulisBuku);
+                    int jumlahHalaman = Integer.parseInt(fieldJumlahHalaman.getText());
+                    int jumlahBuku = Integer.parseInt(fieldJumlahBuku.getText());
+
+                    if (jumlahHalaman <= 0 || jumlahBuku <= 0) {
+                        JOptionPane.showMessageDialog(null, "Jumlah Buku/Jumlah Halaman tidak valid");
+                        return;
+                    }
+
+                    Buku buku = new Buku(judulBuku, jumlahHalaman, penulisBuku, jumlahBuku);
                     koleksi.addDaftarBuku(buku);
 
                     JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
@@ -155,6 +173,14 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
                     }
                 }
             } else {
+                int jumlahHalaman = Integer.parseInt(fieldJumlahHalaman.getText());
+                int jumlahBuku = Integer.parseInt(fieldJumlahBuku.getText());
+
+                if (jumlahHalaman <= 0 || jumlahBuku <= 0) {
+                    JOptionPane.showMessageDialog(null, "Jumlah Buku/Jumlah Halaman tidak valid");
+                    return;
+                }
+
                 Buku buku = new Buku(judulBuku, jumlahHalaman, penulisBuku);
                 koleksi.addDaftarBuku(buku);
 
