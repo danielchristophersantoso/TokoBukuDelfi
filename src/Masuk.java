@@ -22,8 +22,7 @@ public class Masuk extends JFrame implements ActionListener {
         label.setForeground(Color.BLACK);
         panel.add(label);
 
-//        panel.setBackground(new Color(92, 64, 51));
-        panel.setBackground(Color.lightGray);
+        panel.setBackground(new Color(92, 64, 51));
         usernameLabel.setBounds(285, 170, 70, 20);
         usernameLabel.setForeground(Color.BLACK);
         panel.add(usernameLabel);
@@ -57,12 +56,14 @@ public class Masuk extends JFrame implements ActionListener {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals(tokoBuku.getKasir().getNama()) && password.equals(tokoBuku.getKasir().getPassword())) {
-            JOptionPane.showMessageDialog(null, "Berhasil Masuk!");
-            new MenuUtama(tokoBuku);
-            dispose();
+        if (e.getSource() == button) {
+            if (username.equals(tokoBuku.getKasir().getNama()) && password.equals(tokoBuku.getKasir().getPassword())) {
+                JOptionPane.showMessageDialog(null, "Berhasil Masuk!");
+                new MenuUtama(tokoBuku);
+                dispose();
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Nama atau Password salah!");
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nama atau Password salah!");
     }
 }

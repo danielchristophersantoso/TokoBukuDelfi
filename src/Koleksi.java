@@ -27,4 +27,12 @@ public class Koleksi {
     public void removeDaftarBuku(Integer index) {
         daftarBuku.remove(index);
     }
+    public int searchDaftarBuku(String judulBuku, String penulis) {
+        for (Buku b: daftarBuku) {
+            if (b.getJudulBuku().equals(judulBuku) && b.getPenulis().equals(penulis)) {
+                return daftarBuku.indexOf(b);
+            }
+        }
+        return -1;
+    }
 }

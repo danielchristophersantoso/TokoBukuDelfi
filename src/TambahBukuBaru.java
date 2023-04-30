@@ -1,13 +1,8 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.text.NumberFormat;
+import java.util.ArrayList;
 
 public class TambahBukuBaru extends JFrame implements ActionListener {
     private TokoBuku tokoBuku;
@@ -18,8 +13,7 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
     private JLabel labelKoleksi = new JLabel("Koleksi Buku");
     private JTextField fieldJudulBuku = new JTextField();
     private JTextField fieldPenulis = new JTextField();
-    JTextField fieldJumlahHalaman = new JTextField();
-    private JTextField fieldKoleksi = new JTextField();
+    private JTextField fieldJumlahHalaman = new JTextField();
     private JPanel panel = new JPanel();
     private JButton btnTambahBuku = new JButton("Tambah Buku");
     private JMenuBar menuBar = new JMenuBar();
@@ -31,6 +25,8 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
     };
+    private JComboBox namaKoleksiComboBox;
+    private ArrayList<Koleksi> daftarKoleksi;
 
     public TambahBukuBaru(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
@@ -43,6 +39,7 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
+
         labelTambahBuku.setFont(new Font("Arial", Font.BOLD, 30));
         labelTambahBuku.setHorizontalAlignment(SwingConstants.CENTER);
         labelTambahBuku.setBounds(-10,40,880,50);
@@ -59,12 +56,10 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
         fieldJudulBuku.setBounds(240, 35, 120, 20);
         fieldPenulis.setBounds(240, 85, 120, 20);
         fieldJumlahHalaman.setBounds(240, 135, 120, 20);
-        fieldKoleksi.setBounds(240, 185, 120, 20);
 
         panel.add(fieldJudulBuku);
         panel.add(fieldPenulis);
         panel.add(fieldJumlahHalaman);
-        panel.add(fieldKoleksi);
 
         labelJudulBuku.setBounds(35, 20, 150, 50);
         labelJudulBuku.setForeground(Color.BLACK);
@@ -74,6 +69,18 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
         labelJumlahHalaman.setForeground(Color.BLACK);
         labelKoleksi.setBounds(35, 170, 150, 50);
         labelKoleksi.setForeground(Color.BLACK);
+
+        namaKoleksiComboBox = new JComboBox();
+        namaKoleksiComboBox.addItem("Pilih Koleksi");
+        this.daftarKoleksi = this.tokoBuku.getDaftarKoleksi();
+        for (Koleksi j: daftarKoleksi) {
+            namaKoleksiComboBox.addItem(j.getNamaKoleksi());
+        }
+        namaKoleksiComboBox.setBounds(240, 183, 120, 25);
+        namaKoleksiComboBox.setFont(new Font("Arial", Font.PLAIN, 12));
+        namaKoleksiComboBox.addActionListener(this);
+        namaKoleksiComboBox.setFocusable(false);
+        panel.add(namaKoleksiComboBox);
 
         panel.add(labelJudulBuku);
         panel.add(labelPenulis);
@@ -106,9 +113,68 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String halaman = fieldJumlahHalaman.getText();
+        if (e.getSource() == btnTambahBuku) {
+            Integer index = namaKoleksiComboBox.getSelectedIndex() - 1;
+            String judulBuku = fieldJudulBuku.getText();
+            String penulisBuku = fieldPenulis.getText();
+            int jumlahHalaman = Integer.parseInt(fieldJumlahHalaman.getText());
+            Koleksi koleksi = this.tokoBuku.getDaftarKoleksi().get(index);
 
-        if(e.getSource() instanceof JMenuItem item){
+            if (fieldJudulBuku.getText().equals("") || fieldPenulis.getText().equals("") || fieldJumlahHalaman.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
+                return;
+            } else if (!fieldJumlahHalaman.getText().matches("[0-9]+")) {
+                JOptionPane.showMessageDialog(null, "Jumlah Halaman tidak valid");
+                return;
+            } else if (index == -1) {
+                JOptionPane.showMessageDialog(null, "Nama Koleksi tidak valid");
+                return;
+            } else if (koleksi.searchDaftarBuku(judulBuku, penulisBuku) != -1) {
+                int found = koleksi.searchDaftarBuku(judulBuku, penulisBuku);
+                Buku b = koleksi.getDaftarBuku().get(found);
+
+                if (b.getJudulBuku().equals(judulBuku) && b.getPenulis().equals(penulisBuku)) {
+                    JOptionPane.showMessageDialog(null, "Buku sudah terdaftar");
+                    return;
+                } else {
+                    Buku buku = new Buku(judulBuku, jumlahHalaman, penulisBuku);
+                    koleksi.addDaftarBuku(buku);
+
+                    JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
+                    int result = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan data lagi?",
+                            "Konfirmasi", JOptionPane.YES_NO_OPTION);
+
+                    if (result == 1) {
+                        new MenuUtama(tokoBuku);
+                        dispose();
+                    } else if (result == 0) {
+                        fieldPenulis.setText("");
+                        fieldJumlahHalaman.setText("");
+                        fieldJudulBuku.setText("");
+                        namaKoleksiComboBox.setSelectedIndex(0);
+                    }
+                }
+            } else {
+                Buku buku = new Buku(judulBuku, jumlahHalaman, penulisBuku);
+                koleksi.addDaftarBuku(buku);
+
+                JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
+                int result = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan data lagi?",
+                        "Konfirmasi", JOptionPane.YES_NO_OPTION);
+
+                if (result == 1) {
+                    new MenuUtama(tokoBuku);
+                    dispose();
+                } else if (result == 0) {
+                    fieldPenulis.setText("");
+                    fieldJumlahHalaman.setText("");
+                    fieldJudulBuku.setText("");
+                    namaKoleksiComboBox.setSelectedIndex(0);
+                }
+            }
+        }
+
+        if (e.getSource() instanceof JMenuItem item) {
             String option = item.getText();
             if (option.equals("Menu Utama")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
@@ -166,13 +232,6 @@ public class TambahBukuBaru extends JFrame implements ActionListener {
                 if (res == JOptionPane.YES_OPTION) {
                     System.exit(0);
                 }
-            }
-        }
-        else if (!halaman.matches("[0-9]+")) {
-            JOptionPane.showMessageDialog(null, "Input Angka!");
-        } else {
-            if (Integer.parseInt(halaman) <= 0) {
-                JOptionPane.showMessageDialog(null, "Input Angka Lebih dari 0!");
             }
         }
     }
