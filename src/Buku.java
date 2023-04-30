@@ -24,24 +24,12 @@ public class Buku {
         return judulBuku;
     }
 
-    public void setJudulBuku(String judulBuku) {
-        this.judulBuku = judulBuku;
-    }
-
     public Integer getJumlahHalaman() {
         return jumlahHalaman;
     }
 
-    public void setJumlahHalaman(Integer jumlahHalaman) {
-        this.jumlahHalaman = jumlahHalaman;
-    }
-
     public String getPenulis() {
         return penulis;
-    }
-
-    public void setPenulis(String penulis) {
-        this.penulis = penulis;
     }
 
     public Integer getJumlahBuku() {
