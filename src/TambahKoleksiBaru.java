@@ -14,7 +14,13 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
     };
-    public TambahKoleksiBaru(TokoBuku tokoBuku){
+
+    private JPanel panel = new JPanel();
+    private JLabel labelTambahKoleksi = new JLabel("Tambah Koleksi Baru");
+    private JLabel labelNamaKoleksi = new JLabel("Nama Koleksi");
+    private JTextField fieldNamaKoleksi = new JTextField();
+    private JButton btnTambahKoleksi = new JButton("Tambah Koleksi");
+    public TambahKoleksiBaru(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
@@ -25,8 +31,41 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
+
+        labelTambahKoleksi.setFont(new Font("Arial", Font.BOLD, 30));
+        labelTambahKoleksi.setHorizontalAlignment(SwingConstants.CENTER);
+        labelTambahKoleksi.setBounds(-10,40,880,50);
+        labelTambahKoleksi.setForeground(Color.BLACK);
+        labelTambahKoleksi.setBackground(new Color(92, 64, 51));
+        labelTambahKoleksi.setOpaque(true);
+        add(labelTambahKoleksi);
+
+        labelNamaKoleksi.setFont(new Font("Arial", Font.BOLD, 15));
+
+        fieldNamaKoleksi.setBounds(240, 35, 120, 20);
+
+        panel.add(fieldNamaKoleksi);
+
+        labelNamaKoleksi.setBounds(35, 20, 150, 50);
+        labelNamaKoleksi.setForeground(Color.BLACK);
+
+        panel.add(labelNamaKoleksi);
+
+        panel.setBackground(new Color(0,0,0,100));
+        panel.setBounds(230, 110, 400,90);
+        panel.setOpaque(true);
+        panel.setLayout(null);
+        add(panel);
+
+        btnTambahKoleksi.setBounds(280, 230, 300, 25);
+        btnTambahKoleksi.setForeground(Color.WHITE);
+        btnTambahKoleksi.setBackground(Color.black);
+        btnTambahKoleksi.addActionListener(this);
+        btnTambahKoleksi.setFocusable(false);
+        add(btnTambahKoleksi);
+
         this.getContentPane().setBackground(new Color(92, 64, 51));
-        setTitle("Tambah Koleksi Baru");
+        setTitle("Toko Buku Delfi");
         setLayout(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setVisible(true);
@@ -37,7 +76,32 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() instanceof JMenuItem item){
+        if (e.getSource() == btnTambahKoleksi) {
+            String namaKoleksi = fieldNamaKoleksi.getText();
+            if (fieldNamaKoleksi.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
+                return;
+            } else if (tokoBuku.searchKoleksi(namaKoleksi) != -1) {
+                JOptionPane.showMessageDialog(null, "Nama Koleksi sudah terdaftar");
+                return;
+            } else {
+                Koleksi koleksi = new Koleksi(namaKoleksi);
+                this.tokoBuku.getDaftarKoleksi().add(koleksi);
+
+                JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
+                int result = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan data lagi?",
+                        "Konfirmasi", JOptionPane.YES_NO_OPTION);
+
+                if (result == 1) {
+                    new MenuUtama(tokoBuku);
+                    dispose();
+                } else if (result == 0) {
+                    fieldNamaKoleksi.setText("");
+                }
+            }
+        }
+
+        if (e.getSource() instanceof JMenuItem item) {
             String option = item.getText();
             if (option.equals("Menu Utama")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);

@@ -41,4 +41,13 @@ public class TokoBuku {
     public void addDaftarPelanggan(Pelanggan pelanggan) {
         daftarPelanggan.add(pelanggan);
     }
+
+    public int searchKoleksi(String namaKoleksi) {
+        for (Koleksi k : daftarKoleksi) {
+            if (k.getNamaKoleksi().equals(namaKoleksi)) {
+                return daftarKoleksi.indexOf(k);
+            }
+        }
+        return -1;
+    }
 }
