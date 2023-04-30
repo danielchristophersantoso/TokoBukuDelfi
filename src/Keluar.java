@@ -11,7 +11,7 @@ public class Keluar extends JFrame implements ActionListener {
     private JButton akhiriSesiButton = new JButton("Akhiri Sesi");
     public Keluar(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
-        this.setTitle("Keluar");
+        this.setTitle("Toko Buku Delfi");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
         titleLabel.setForeground(Color.BLACK);
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
