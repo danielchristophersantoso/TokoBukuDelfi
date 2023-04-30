@@ -12,14 +12,14 @@ public class MenuUtama extends JFrame implements ActionListener {
     private JPanel panel = new JPanel();
     private JButton[] buttons = new JButton[]{};
     private String[] Labels = new String[] {
-            "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Tambah Buku Baru", "Tambah Stok Buku", "Hapus Buku", "Tambah Koleksi Baru",
             "Hapus Koleksi", "Tambah Transaksi Baru",
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
     };
     public MenuUtama(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
-        this.setTitle("Menu Utama");
+        this.setTitle("Toko Buku Delfi");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
@@ -27,9 +27,9 @@ public class MenuUtama extends JFrame implements ActionListener {
         titleLabel.setHorizontalAlignment(JLabel.CENTER);
         titleLabel.setBounds(0, 20, 880, 40);
         this.add(titleLabel, BorderLayout.NORTH);
-        panel.setBounds(240, 80, 400, 330);
+        panel.setBounds(140, 80, 600, 280);
         panel.setOpaque(false);
-        panel.setLayout(new GridLayout(9, 1, 0, 3));
+        panel.setLayout(new GridLayout(5, 2, 15, 13));
 
         for (String l: Labels){
             JButton btn = new JButton(l);
@@ -71,6 +71,9 @@ public class MenuUtama extends JFrame implements ActionListener {
         if(check == 1){
             if (option.equals("Tambah Buku Baru")) {
                 new TambahBukuBaru(this.tokoBuku);
+                dispose();
+            } else if (option.equals("Tambah Stok Buku")) {
+                new TambahStokBuku(this.tokoBuku);
                 dispose();
             } else if (option.equals("Hapus Buku")) {
                 new HapusBuku(this.tokoBuku);

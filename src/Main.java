@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         String namaKasir = new String("Kasir1");
         String idKasir = new String("BD1981");
-        String passwordKasir = new String("");
+        String passwordKasir = new String("Kasir1");
         Kasir kasir = new Kasir(namaKasir, idKasir, passwordKasir);
         TokoBuku tokoBuku = new TokoBuku(kasir);
         //Dummy Data Start
@@ -54,7 +54,7 @@ public class Main {
 //            System.out.println(tokoBuku.getDaftarTransaksi().get(0).getIdTransaksi());
 //            System.out.println(tokoBuku.getDaftarTransaksi().size());
         //Dummy Data End
-//        new Masuk(tokoBuku);
-        new MenuUtama(tokoBuku);
+        new Masuk(tokoBuku);
+//        new MenuUtama(tokoBuku);
     }
 }
