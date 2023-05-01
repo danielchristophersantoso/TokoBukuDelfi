@@ -12,20 +12,12 @@ public class Koleksi {
         return namaKoleksi;
     }
 
-    public void setNamaKoleksi(String namaKoleksi) {
-        this.namaKoleksi = namaKoleksi;
-    }
-
     public ArrayList<Buku> getDaftarBuku() {
         return daftarBuku;
     }
 
     public void addDaftarBuku(Buku buku) {
         daftarBuku.add(buku);
-    }
-
-    public void removeDaftarBuku(Integer index) {
-        daftarBuku.remove(index);
     }
     public int searchDaftarBuku(String judulBuku, String penulis) {
         for (Buku b: daftarBuku) {
