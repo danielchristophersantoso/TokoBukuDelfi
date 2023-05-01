@@ -9,7 +9,7 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
     private JMenu fileMenu = new JMenu("File");
     private JMenuItem[] menuItems = new JMenuItem[]{};
     private String[] Labels = new String[] {
-            "Menu Utama", "Tambah Buku Baru", "Hapus Buku", "Tambah Koleksi Baru",
+            "Menu Utama", "Tambah Buku Baru", "Tambah Stok Buku", "Hapus Buku", "Tambah Koleksi Baru",
             "Hapus Koleksi", "Tambah Transaksi Baru",
             "Tampilkan Riwayat Transaksi", "Tambah Pelanggan Baru",
             "Keluar", "Akhiri Sesi"
@@ -109,11 +109,16 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
                     new MenuUtama(tokoBuku);
                     dispose();
                 }
-            }
-            else if (option.equals("Tambah Buku Baru")) {
+            } else if (option.equals("Tambah Buku Baru")) {
                 int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (res == JOptionPane.YES_OPTION) {
                     new TambahBukuBaru(tokoBuku);
+                    dispose();
+                }
+            } else if (option.equals("Tambah Stok Buku")) {
+                int res = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin berpindah halaman? Proses yang belum anda simpan tidak akan disimpan.", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (res == JOptionPane.YES_OPTION) {
+                    new TambahStokBuku(this.tokoBuku);
                     dispose();
                 }
             } else if (option.equals("Hapus Buku")) {
