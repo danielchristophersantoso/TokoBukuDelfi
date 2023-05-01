@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 
 public class Masuk extends JFrame implements ActionListener {
     private TokoBuku tokoBuku;
-    private JLabel label = new JLabel("Masuk");
+    private JLabel labelMasuk = new JLabel("Masuk");
     private JPanel panel = new JPanel();
-    private JButton button = new JButton("Masuk");
+    private JButton btnMasuk = new JButton("Masuk");
     private JLabel usernameLabel = new JLabel("Nama");
     private JTextField usernameField = new JTextField();
     private JLabel passwordLabel = new JLabel("Password");
@@ -16,11 +16,11 @@ public class Masuk extends JFrame implements ActionListener {
     public Masuk(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
         setTitle("Toko Buku Delfi");
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        label.setFont(new Font("Arial", Font.BOLD, 30));
-        label.setBounds(380,110,100,50);
-        label.setForeground(Color.BLACK);
-        panel.add(label);
+        labelMasuk.setHorizontalAlignment(SwingConstants.CENTER);
+        labelMasuk.setFont(new Font("Arial", Font.BOLD, 30));
+        labelMasuk.setBounds(380,110,100,50);
+        labelMasuk.setForeground(Color.BLACK);
+        panel.add(labelMasuk);
 
         panel.setBackground(new Color(92, 64, 51));
         usernameLabel.setBounds(285, 170, 70, 20);
@@ -35,11 +35,11 @@ public class Masuk extends JFrame implements ActionListener {
         panel.add(passwordField);
         panel.setBorder(new LineBorder(new Color(92, 64, 51)));
 
-        button.setBounds(285, 290, 300, 25);
-        button.setForeground(Color.WHITE);
-        button.setBackground(Color.black);
-        button.addActionListener(this);
-        panel.add(button);
+        btnMasuk.setBounds(285, 290, 300, 25);
+        btnMasuk.setForeground(Color.WHITE);
+        btnMasuk.setBackground(Color.black);
+        btnMasuk.addActionListener(this);
+        panel.add(btnMasuk);
 
         panel.setLayout(null);
         add(panel);
@@ -56,7 +56,7 @@ public class Masuk extends JFrame implements ActionListener {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (e.getSource() == button) {
+        if (e.getSource() == btnMasuk) {
             if (username.equals(tokoBuku.getKasir().getNama()) && password.equals(tokoBuku.getKasir().getPassword())) {
                 JOptionPane.showMessageDialog(null, "Berhasil Masuk!");
                 new MenuUtama(tokoBuku);
