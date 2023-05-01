@@ -194,7 +194,8 @@ public class TambahStokBuku extends JFrame implements ActionListener {
                 judulBukuComboBox.addItem("Pilih Buku");
                 this.daftarBuku = daftarKoleksi.get(index).getDaftarBuku();
                 for (Buku k: daftarBuku) {
-                    judulBukuComboBox.addItem(k.getJudulBuku());
+                    String temp = new String(k.getJudulBuku() + ", " + k.getPenulis());
+                    judulBukuComboBox.addItem(temp);
                 }
             }
         } else if (e.getSource() == judulBukuComboBox) {
@@ -215,7 +216,8 @@ public class TambahStokBuku extends JFrame implements ActionListener {
                             }
                             judulBukuComboBox.addItem("Pilih Buku");
                             for (Buku k : daftarBuku) {
-                                judulBukuComboBox.addItem(k.getJudulBuku());
+                                String temp = new String(k.getJudulBuku() + ", " + k.getPenulis());
+                                judulBukuComboBox.addItem(temp);
                             }
                         }
                     }
