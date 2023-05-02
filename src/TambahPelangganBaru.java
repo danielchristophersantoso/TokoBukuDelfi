@@ -23,7 +23,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
     };
     public TambahPelangganBaru(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
-        this.setTitle("Tambah Pelanggan Baru");
+        this.setTitle("Toko Buku Delfi");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         for (String l: Labels){

@@ -26,7 +26,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
 
     public HapusKoleksi(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
-        this.setTitle("Hapus Koleksi");
+        this.setTitle("Toko Buku Delfi");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         for (String l: Labels){

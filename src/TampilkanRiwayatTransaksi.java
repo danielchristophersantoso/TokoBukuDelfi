@@ -27,7 +27,7 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
 
     public TampilkanRiwayatTransaksi(TokoBuku tokoBuku) {
         this.tokoBuku = tokoBuku;
-        this.setTitle("Riwayat Transaksi");
+        this.setTitle("Toko Buku Delfi");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         for (String l: Labels){

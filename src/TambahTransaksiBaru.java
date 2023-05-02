@@ -55,7 +55,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
 
     public TambahTransaksiBaru(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
-        this.setTitle("Tambah Transaksi Baru");
+        this.setTitle("Toko Buku Delfi");
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         for (String l: Labels){
@@ -233,7 +233,6 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == dropDownListKoleksi)
         {
-            System.out.println("masuk");
             int index = dropDownListKoleksi.getSelectedIndex()-1;
             if (index == -1) {
                 int itemCount = dropDownListBuku.getItemCount();
@@ -256,7 +255,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListKoleksi2)
         {
-            System.out.println("masuk");
+//            System.out.println("masuk");
             int index = dropDownListKoleksi2.getSelectedIndex()-1;
             if (index == -1) {
                 int itemCount = dropDownListBuku2.getItemCount();
@@ -279,7 +278,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListKoleksi3)
         {
-            System.out.println("masuk");
+//            System.out.println("masuk");
             int index = dropDownListKoleksi3.getSelectedIndex()-1;
             if (index == -1) {
                 int itemCount = dropDownListBuku3.getItemCount();
@@ -302,7 +301,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListKoleksi4)
         {
-            System.out.println("masuk");
+//            System.out.println("masuk");
             int index = dropDownListKoleksi4.getSelectedIndex()-1;
             if (index == -1) {
                 int itemCount = dropDownListBuku4.getItemCount();
@@ -325,7 +324,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListKoleksi5)
         {
-            System.out.println("masuk");
+//            System.out.println("masuk");
             int index = dropDownListKoleksi5.getSelectedIndex()-1;
             if (index == -1) {
                 int itemCount = dropDownListBuku5.getItemCount();
@@ -565,53 +564,158 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     daftarJumlahBuku.add(Integer.valueOf(Integer.parseInt(jumlahBukuField5.getText())));
                 }
 
+                // buatlah validasi untuk agar buku yang dipilih tidak sama
+
+
                 int totalbukuyangdibeli = 0;
-//                for (int i = 0; i < daftarJudulBuku.size(); i++) {
-//                    String buku = daftarJudulBuku.get(i);
-//                    int jumlahBuku = daftarJumlahBuku.get(i);
-////                  buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku);
-//                    Buku bukuTransaksi = new Buku(buku, jumlahBuku);
-//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField.getText())));
-//                    daftarBukuTransaksi.add(bukuTransaksi);
-//                    totalbukuyangdibeli += jumlahBuku;
-//                }
+                int indexKoleksi1 = 0, indexBuku1 = 0 , jumlahBuku1 = 0, newJumlahBuku1 = -1;
+                int indexKoleksi2 = 0, indexBuku2 = 0 , jumlahBuku2 = 0, newJumlahBuku2 = -1;
+                int indexKoleksi3 = 0, indexBuku3 = 0 , jumlahBuku3 = 0, newJumlahBuku3 = -1;
+                int indexKoleksi4 = 0, indexBuku4 = 0 , jumlahBuku4 = 0, newJumlahBuku4 = -1;
+                int indexKoleksi5 = 0, indexBuku5 = 0 , jumlahBuku5 = 0, newJumlahBuku5 = -1;
 
                 if (dropDownListBuku.getSelectedItem() != "" && jumlahBukuField.getText() != "")
                 {
-                    int indexKoleksi = dropDownListKoleksi.getSelectedIndex();
-                    int indexBuku = dropDownListBuku.getSelectedIndex();
-                    int jumlahBuku = Integer.parseInt(jumlahBukuField.getText());
-                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku);
-                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField.getText())));
+                    indexKoleksi1 = dropDownListKoleksi.getSelectedIndex()-1;
+                    indexBuku1 = dropDownListBuku.getSelectedIndex();
+                    jumlahBuku1 = Integer.parseInt(jumlahBukuField.getText());
+//                    System.out.println("Indeks koleksi 1 = " + indexKoleksi1);
+//                    System.out.println("Indeks buku 1 = " + indexBuku1);
+//                    System.out.println("jumlah buku sebelum dikuran = " + tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJumlahBuku());
+                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1);
+//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField.getText())));
                     daftarBukuTransaksi.add(bukuTransaksi);
-                    totalbukuyangdibeli += jumlahBuku;
-                    System.out.println("Berdasarkan tokobuku sebelum dikurangin = " + tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku-1).getJumlahBuku());
-                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku-1).getJumlahBuku() - jumlahBuku < 0)
+                    totalbukuyangdibeli += jumlahBuku1;
+//                    System.out.println("Jumlah buku 1 = " + jumlahBuku1);
+//                    System.out.println(tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJumlahBuku() - jumlahBuku1);
+                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJumlahBuku() - jumlahBuku1 < 0)
                     {
                         JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
                         return;
                     }
-                    int newjumlahbuku = tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku-1).getJumlahBuku() - jumlahBuku;
-                    tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku-1).setJumlahBuku(Integer.valueOf(newjumlahbuku));
-                    System.out.println("Jumlah buku yang dibeli: " + jumlahBuku);
-                    System.out.println("Jumlah buku yang tersisa: " + newjumlahbuku);
-                    System.out.println("Berdasarkan tokobuku = " + tokoBuku.getDaftarKoleksi().get(indexKoleksi).getDaftarBuku().get(indexBuku-1).getJumlahBuku());
+                    newJumlahBuku1 = tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJumlahBuku() - jumlahBuku1;
                 }
+                if (dropDownListBuku2.getSelectedItem() != "" && jumlahBukuField2.getText() != "")
+                {
+                    indexKoleksi2 = dropDownListKoleksi2.getSelectedIndex()-1;
+                    indexBuku2 = dropDownListBuku2.getSelectedIndex();
+                    jumlahBuku2 = Integer.parseInt(jumlahBukuField2.getText());
+                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1);
+//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField2.getText())));
+                    daftarBukuTransaksi.add(bukuTransaksi);
+                    totalbukuyangdibeli += jumlahBuku2;
+                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2 < 0)
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
+                        return;
+                    }
+                    newJumlahBuku2 = tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2;
+                }
+                if (dropDownListBuku3.getSelectedItem() != "" && jumlahBukuField3.getText() != "")
+                {
+                    indexKoleksi3 = dropDownListKoleksi3.getSelectedIndex()-1;
+                    indexBuku3 = dropDownListBuku3.getSelectedIndex();
+                    jumlahBuku3 = Integer.parseInt(jumlahBukuField3.getText());
+                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1);
+//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField3.getText())));
+                    daftarBukuTransaksi.add(bukuTransaksi);
+                    totalbukuyangdibeli += jumlahBuku3;
+                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1).getJumlahBuku() - jumlahBuku3 < 0)
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
+                        return;
+                    }
+                    newJumlahBuku3 = tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1).getJumlahBuku() - jumlahBuku3;
+                }
+                if (dropDownListBuku4.getSelectedItem() != "" && jumlahBukuField4.getText() != "")
+                {
+                    indexKoleksi4 = dropDownListKoleksi4.getSelectedIndex()-1;
+                    indexBuku4 = dropDownListBuku4.getSelectedIndex();
+                    jumlahBuku4 = Integer.parseInt(jumlahBukuField4.getText());
+                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1);
+//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField4.getText())));
+                    daftarBukuTransaksi.add(bukuTransaksi);
+                    totalbukuyangdibeli += jumlahBuku4;
+                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1).getJumlahBuku() - jumlahBuku4 < 0)
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
+                        return;
+                    }
+                    newJumlahBuku4 = tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1).getJumlahBuku() - jumlahBuku4;
+                }
+                if (dropDownListBuku5.getSelectedItem() != "" && jumlahBukuField5.getText() != "")
+                {
+                    indexKoleksi5 = dropDownListKoleksi5.getSelectedIndex()-1;
+                    indexBuku5 = dropDownListBuku5.getSelectedIndex();
+                    jumlahBuku5 = Integer.parseInt(jumlahBukuField5.getText());
+                    Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku5-1);
+//                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField5.getText())));
+                    daftarBukuTransaksi.add(bukuTransaksi);
+                    totalbukuyangdibeli += jumlahBuku5;
+                    if (tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku5-1).getJumlahBuku() - jumlahBuku5 < 0)
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
+                        return;
+                    }
+                    newJumlahBuku5 = tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2;
+                }
+
+                int result = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menambahkan transaksi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+                if (result == 1)
+                {
+                    return;
+                }
+
+
+                if (newJumlahBuku1 != -1)
+                {
+                    tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).setJumlahBuku(Integer.valueOf(newJumlahBuku1));
+                }
+                if (newJumlahBuku2 != -1)
+                {
+                    tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).setJumlahBuku(Integer.valueOf(newJumlahBuku2));
+                }
+                if (newJumlahBuku3 != -1)
+                {
+                    tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1).setJumlahBuku(Integer.valueOf(newJumlahBuku3));
+                }
+                if (newJumlahBuku4 != -1)
+                {
+                    tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1).setJumlahBuku(Integer.valueOf(newJumlahBuku4));
+                }
+                if (newJumlahBuku5 != -1)
+                {
+                    tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku5-1).setJumlahBuku(Integer.valueOf(newJumlahBuku5));
+                }
+
                 String ID = String.format("Trans%03d", this.tokoBuku.getDaftarTransaksi().size()+1);
                 String namaKasir = tokoBuku.getKasir().getNama();
                 subtotaltransaksi = (Double) (totalbukuyangdibeli * randomharga);
 
-
-                String namaBukuUntukDikurangi;
-                int jumlahBukuYangHarusDikurangi;
-                for (int i = 0; i < daftarJudulBuku.size(); i++) {
-                    namaBukuUntukDikurangi = daftarJudulBuku.get(i);
-                }
-
-
                 Transaksi transaksi = new Transaksi(ID, namaKasir, daftarBukuTransaksi,namaPelanggan,IDPelanggan,subtotaltransaksi);
                 this.tokoBuku.getDaftarTransaksi().add(transaksi);
                 JOptionPane.showMessageDialog(null, "Transaksi berhasil ditambahkan");
+                // validasi kalo bukunya habis
+                if (dropDownListBuku.getSelectedItem() != "" && jumlahBukuField.getText() != "" && tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJumlahBuku() == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "WARNING!!!! Buku " + tokoBuku.getDaftarKoleksi().get(indexKoleksi1).getDaftarBuku().get(indexBuku1-1).getJudulBuku() + " telah habis, islahkan isi stok kembali");
+                }
+                if (dropDownListBuku2.getSelectedItem() != "" && jumlahBukuField2.getText() != "" && tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "WARNING!!!! Buku " + tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJudulBuku() + " telah habis, islahkan isi stok kembali");
+                }
+                if (dropDownListBuku3.getSelectedItem() != "" && jumlahBukuField3.getText() != "" && tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1).getJumlahBuku() == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "WARNING!!!! Buku " + tokoBuku.getDaftarKoleksi().get(indexKoleksi3).getDaftarBuku().get(indexBuku3-1).getJudulBuku() + " telah habis, islahkan isi stok kembali");
+                }
+                if (dropDownListBuku4.getSelectedItem() != "" && jumlahBukuField4.getText() != "" && tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1).getJumlahBuku() == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "WARNING!!!! Buku " + tokoBuku.getDaftarKoleksi().get(indexKoleksi4).getDaftarBuku().get(indexBuku4-1).getJudulBuku() + " telah habis, islahkan isi stok kembali");
+                }
+                if (dropDownListBuku5.getSelectedItem() != "" && jumlahBukuField5.getText() != "" && tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku5-1).getJumlahBuku() == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "WARNING!!!! Buku " + tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku5-1).getJudulBuku() + " telah habis, islahkan isi stok kembali");
+                }
                 int yesno = JOptionPane.showConfirmDialog(null, "Apakah anda ingin menambahkan transaksi lagi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (yesno == 1)
                 {
@@ -626,12 +730,16 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     jumlahBukuField3.setText("");
                     jumlahBukuField4.setText("");
                     jumlahBukuField5.setText("");
+                    dropDownListKoleksi.setSelectedIndex(0);
+                    dropDownListKoleksi2.setSelectedIndex(0);
+                    dropDownListKoleksi3.setSelectedIndex(0);
+                    dropDownListKoleksi4.setSelectedIndex(0);
+                    dropDownListKoleksi5.setSelectedIndex(0);
                     dropDownListBuku.setSelectedIndex(0);
                     dropDownListBuku2.setSelectedIndex(0);
                     dropDownListBuku3.setSelectedIndex(0);
                     dropDownListBuku4.setSelectedIndex(0);
                     dropDownListBuku5.setSelectedIndex(0);
-
                 }
             }
         }
