@@ -30,7 +30,7 @@ public class Main {
             tokoBuku.getDaftarKoleksi().get(1).getDaftarBuku().add(buku1a);
             Buku buku2 = new Buku("Buku2", 100, "Delpin",10);
             tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku().add(buku2);
-            Buku buku2a = new Buku("Buku2a", 100, "Delpin",10);
+            Buku buku2a = new Buku("Buku2a", 100, "Delpin1",10);
             tokoBuku.getDaftarKoleksi().get(2).getDaftarBuku().add(buku2a);
             //Cek data buku masuk/ga
 //            System.out.println(tokoBuku.getDaftarKoleksi().get(0).getDaftarBuku().get(0).getJudulBuku());
@@ -54,7 +54,7 @@ public class Main {
 //            System.out.println(tokoBuku.getDaftarTransaksi().get(0).getIdTransaksi());
 //            System.out.println(tokoBuku.getDaftarTransaksi().size());
         //Dummy Data End
-        new Masuk(tokoBuku);
-//        new MenuUtama(tokoBuku);
+//        new Masuk(tokoBuku);
+        new MenuUtama(tokoBuku);
     }
 }
