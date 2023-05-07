@@ -347,6 +347,14 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListBuku)
         {
+//            if (!(dropDownListBuku.getSelectedIndex() == 0) && !(dropDownListBuku2.getSelectedIndex() == 0)) {
+//                if ((dropDownListBuku.getSelectedItem().equals(dropDownListBuku2.getSelectedItem()) || dropDownListBuku.getSelectedItem().equals(dropDownListBuku3.getSelectedItem()) || dropDownListBuku.getSelectedItem().equals(dropDownListBuku4.getSelectedItem()) || dropDownListBuku.getSelectedItem().equals(dropDownListBuku5.getSelectedItem())))
+//                {
+//                    JOptionPane.showMessageDialog(null, "Buku yang dipilih tidak boleh sama");
+//                    dropDownListBuku.setSelectedIndex(0);
+//                    return;
+//                }
+//            }
             int indexkoleksi = dropDownListKoleksi.getSelectedIndex()-1;
             int indexbuku = dropDownListBuku.getSelectedIndex()-1;
             if (indexbuku == -1) {
@@ -359,6 +367,12 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         }
         if (e.getSource() == dropDownListBuku2)
         {
+//            if (!(dropDownListBuku.getSelectedIndex() == 0) && !(dropDownListBuku2.getSelectedIndex() == 0) && (dropDownListBuku2.getSelectedIndex() == dropDownListBuku.getSelectedIndex() || dropDownListBuku2.getSelectedIndex() == dropDownListBuku3.getSelectedIndex() || dropDownListBuku2.getSelectedIndex() == dropDownListBuku4.getSelectedIndex() || dropDownListBuku2.getSelectedIndex() == dropDownListBuku5.getSelectedIndex()))
+//            {
+//                JOptionPane.showMessageDialog(null, "Buku yang dipilih tidak boleh sama");
+//                dropDownListBuku2.setSelectedIndex(0);
+//                return;
+//            }
             int indexkoleksi = dropDownListKoleksi2.getSelectedIndex()-1;
             int indexbuku = dropDownListBuku2.getSelectedIndex()-1;
             if (indexbuku == -1) {
@@ -564,7 +578,6 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     daftarJumlahBuku.add(Integer.valueOf(Integer.parseInt(jumlahBukuField5.getText())));
                 }
 
-                // buatlah validasi untuk agar buku yang dipilih tidak sama
 
 
                 int totalbukuyangdibeli = 0;
@@ -602,6 +615,18 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     jumlahBuku2 = Integer.parseInt(jumlahBukuField2.getText());
                     Buku bukuTransaksi = tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1);
 //                    bukuTransaksi.setJumlahBuku(Integer.valueOf(Integer.parseInt(jumlahBukuField2.getText())));
+                    for (int i=0;i<daftarBukuTransaksi.size();i++)
+                    {
+                        if (daftarBukuTransaksi.get(i).getJudulBuku().equals(tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJudulBuku()))
+                        {
+                            System.out.println("masuk");
+                            if (daftarBukuTransaksi.get(i).getJumlahBuku() - jumlahBuku2 < 0)
+                            {
+                                JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli melampaui stok yang ada");
+                                return;
+                            }
+                        }
+                    }
                     daftarBukuTransaksi.add(bukuTransaksi);
                     totalbukuyangdibeli += jumlahBuku2;
                     if (tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2 < 0)
@@ -609,6 +634,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                         JOptionPane.showMessageDialog(null, "ERROR, jumlah buku yang tersedia tidak cukup");
                         return;
                     }
+
                     newJumlahBuku2 = tokoBuku.getDaftarKoleksi().get(indexKoleksi2).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2;
                 }
                 if (dropDownListBuku3.getSelectedItem() != "" && jumlahBukuField3.getText() != "")
@@ -659,6 +685,90 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
                     }
                     newJumlahBuku5 = tokoBuku.getDaftarKoleksi().get(indexKoleksi5).getDaftarBuku().get(indexBuku2-1).getJumlahBuku() - jumlahBuku2;
                 }
+
+                if (dropDownListKoleksi.getSelectedIndex()!=0 && dropDownListKoleksi2.getSelectedIndex()!=0 && dropDownListBuku.getSelectedIndex()!=0 && dropDownListBuku2.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi.getSelectedIndex() == dropDownListKoleksi2.getSelectedIndex() && dropDownListBuku.getSelectedIndex() == dropDownListBuku2.getSelectedIndex() && namaPenulisField.getText().equals(namaPenulisField2.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi.getSelectedIndex()!=0 && dropDownListKoleksi3.getSelectedIndex()!=0 && dropDownListBuku.getSelectedIndex()!=0 && dropDownListBuku3.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi.getSelectedIndex() == dropDownListKoleksi3.getSelectedIndex() && dropDownListBuku.getSelectedIndex() == dropDownListBuku3.getSelectedIndex() && namaPenulisField.getText().equals(namaPenulisField3.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi.getSelectedIndex()!=0 && dropDownListKoleksi4.getSelectedIndex()!=0 && dropDownListBuku.getSelectedIndex()!=0 && dropDownListBuku4.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi.getSelectedIndex() == dropDownListKoleksi4.getSelectedIndex() && dropDownListBuku.getSelectedIndex() == dropDownListBuku4.getSelectedIndex() && namaPenulisField.getText().equals(namaPenulisField4.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi.getSelectedIndex()!=0 && dropDownListKoleksi5.getSelectedIndex()!=0 && dropDownListBuku.getSelectedIndex()!=0 && dropDownListBuku5.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi.getSelectedIndex() == dropDownListKoleksi5.getSelectedIndex() && dropDownListBuku.getSelectedIndex() == dropDownListBuku5.getSelectedIndex() && namaPenulisField.getText().equals(namaPenulisField5.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi2.getSelectedIndex()!=0 && dropDownListKoleksi3.getSelectedIndex()!=0 && dropDownListBuku2.getSelectedIndex()!=0 && dropDownListBuku3.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi2.getSelectedIndex() == dropDownListKoleksi3.getSelectedIndex() && dropDownListBuku2.getSelectedIndex() == dropDownListBuku3.getSelectedIndex() && namaPenulisField2.getText().equals(namaPenulisField3.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi2.getSelectedIndex()!=0 && dropDownListKoleksi4.getSelectedIndex()!=0 && dropDownListBuku2.getSelectedIndex()!=0 && dropDownListBuku4.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi2.getSelectedIndex() == dropDownListKoleksi4.getSelectedIndex() && dropDownListBuku2.getSelectedIndex() == dropDownListBuku4.getSelectedIndex() && namaPenulisField2.getText().equals(namaPenulisField4.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi2.getSelectedIndex()!=0 && dropDownListKoleksi5.getSelectedIndex()!=0 && dropDownListBuku2.getSelectedIndex()!=0 && dropDownListBuku5.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi2.getSelectedIndex() == dropDownListKoleksi5.getSelectedIndex() && dropDownListBuku2.getSelectedIndex() == dropDownListBuku5.getSelectedIndex() && namaPenulisField2.getText().equals(namaPenulisField5.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi3.getSelectedIndex()!=0 && dropDownListKoleksi4.getSelectedIndex()!=0 && dropDownListBuku3.getSelectedIndex()!=0 && dropDownListBuku4.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi3.getSelectedIndex() == dropDownListKoleksi4.getSelectedIndex() && dropDownListBuku3.getSelectedIndex() == dropDownListBuku4.getSelectedIndex() && namaPenulisField3.getText().equals(namaPenulisField4.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi3.getSelectedIndex()!=0 && dropDownListKoleksi5.getSelectedIndex()!=0 && dropDownListBuku3.getSelectedIndex()!=0 && dropDownListBuku5.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi3.getSelectedIndex() == dropDownListKoleksi5.getSelectedIndex() && dropDownListBuku3.getSelectedIndex() == dropDownListBuku5.getSelectedIndex() && namaPenulisField3.getText().equals(namaPenulisField5.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+                if (dropDownListKoleksi4.getSelectedIndex()!=0 && dropDownListKoleksi5.getSelectedIndex()!=0 && dropDownListBuku4.getSelectedIndex()!=0 && dropDownListBuku5.getSelectedIndex()!=0)
+                {
+                    if (dropDownListKoleksi4.getSelectedIndex() == dropDownListKoleksi5.getSelectedIndex() && dropDownListBuku4.getSelectedIndex() == dropDownListBuku5.getSelectedIndex() && namaPenulisField4.getText().equals(namaPenulisField5.getText()))
+                    {
+                        JOptionPane.showMessageDialog(null, "ERROR, Buku yang dibeli tidak boleh sama");
+                        return;
+                    }
+                }
+
+
+
 
                 int result = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menambahkan transaksi?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
                 if (result == 1)
