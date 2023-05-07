@@ -55,6 +55,7 @@ public class Main {
 //            System.out.println(tokoBuku.getDaftarTransaksi().size());
         //Dummy Data End
 //        new Masuk(tokoBuku);
-        new MenuUtama(tokoBuku);
+//        new MenuUtama(tokoBuku);
+          new TambahTransaksiBaru(tokoBuku);
     }
 }

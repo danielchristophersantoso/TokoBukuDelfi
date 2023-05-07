@@ -12,8 +12,8 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
     private JComboBox dropdownListTransaksi = new JComboBox();
     private JButton lihatTransaksi = new JButton("Lihat Transaksi");
     private JPanel panel = new JPanel();
-    private ArrayList<Buku> daftarbuku = new ArrayList<Buku>();
-    private ArrayList<Transaksi> daftartransaksi = new ArrayList<Transaksi>();
+//    private ArrayList<Buku> daftarbuku = new ArrayList<Buku>();
+//    private ArrayList<Transaksi> daftartransaksi = new ArrayList<Transaksi>();
     private JFrame internalFrame;
     private JMenuBar menuBar = new JMenuBar();
     private JMenu fileMenu = new JMenu("File");

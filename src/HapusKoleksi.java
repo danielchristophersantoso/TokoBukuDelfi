@@ -13,7 +13,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
     private JPanel panel = new JPanel();
 
     public ArrayList<Koleksi> koleksi = new ArrayList<Koleksi>();
-    public ArrayList<Buku> daftarbuku = new ArrayList<Buku>();
+//    public ArrayList<Buku> daftarbuku = new ArrayList<Buku>();
     private JMenuBar menuBar = new JMenuBar();
     private JMenu fileMenu = new JMenu("File");
     private JMenuItem[] menuItems = new JMenuItem[]{};
