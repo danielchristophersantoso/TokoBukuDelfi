@@ -48,7 +48,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
         panel.add(namaField);
 
         panel.setBounds(200,100,400,200);
-        panel.setBackground(Color.GRAY);
+        panel.setBackground(new Color(255, 255, 255,50));
         tambahButton.addActionListener(this);
         tambahButton.setBackground(Color.BLACK);
         tambahButton.setForeground(Color.WHITE);
@@ -60,7 +60,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
         add(panel,BorderLayout.CENTER);
 
         setLayout(null);
-        getContentPane().setBackground(Color.lightGray);
+        getContentPane().setBackground(new Color(92, 64, 51));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
