@@ -54,7 +54,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         hapusKoleksiBtn.setBounds(130, 140, 150, 30);
         panel.add(hapusKoleksiBtn);
 
-        panel.setBackground(new Color(0,0,0,100));
+        panel.setBackground(new Color(255, 255, 255,50));;
         panel.setBounds(200,100,400,200);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
