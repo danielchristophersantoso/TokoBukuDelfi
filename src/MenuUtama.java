@@ -47,9 +47,8 @@ public class MenuUtama extends JFrame implements ActionListener {
 
         this.add(panel);
         this.setFocusable(false);
-        this.setLocationRelativeTo(null);
         this.setLayout(null);
-        this.setSize(880, 495);
+        this.setBounds(360, 200, 880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(new Color(92, 64, 51));
