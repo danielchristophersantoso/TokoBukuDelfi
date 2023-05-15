@@ -68,7 +68,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
-        headerLabel.setBounds(0,0,800,65);
+        headerLabel.setBounds(40,0,800,65);
         add(headerLabel, BorderLayout.NORTH);
 
         namaPelangganLabel.setBounds(25,15,230,25);
@@ -180,15 +180,15 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
 
         panel.setLayout(null);
         panel.setBackground(new Color(255, 255, 255,50));
-        panel.setBounds(13,70,760,350);
+        panel.setBounds(53,70,760,350);
         add(panel,BorderLayout.CENTER);
 
 
         getContentPane().setBackground(new Color(92, 64, 51));
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setBounds(300, 90, 800, 490);
+//        setLocationRelativeTo(null);
+        setBounds(360, 200, 880, 495);
         setVisible(true);
         setResizable(false);
 

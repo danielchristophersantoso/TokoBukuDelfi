@@ -70,7 +70,7 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setBounds(300, 90, 800, 490);
+        setBounds(360, 200, 880, 495);
         setVisible(true);
         setResizable(false);
     }
@@ -85,21 +85,21 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
                     headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
                     headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
                     headerLabel.setForeground(Color.BLACK);
-                    headerLabel.setBounds(-150,0,800,80);
+                    headerLabel.setBounds(-110,0,800,80);
                     internalFrame.add(headerLabel, BorderLayout.NORTH);
                     // nama kasir
                     JLabel namaKasir = new JLabel("Nama Kasir : " + this.tokoBuku.getDaftarTransaksi().get(i).getNamaKasir());
-                    namaKasir.setBounds(35,70,230,30);
+                    namaKasir.setBounds(75,70,230,30);
                     namaKasir.setForeground(Color.BLACK);
                     internalFrame.add(namaKasir);
                     // nama pelanggan
                     JLabel namaPelanggan = new JLabel("Nama Pelanggan : " + this.tokoBuku.getDaftarTransaksi().get(i).getNamaPelanggan());
-                    namaPelanggan.setBounds(35,110,230,30);
+                    namaPelanggan.setBounds(75,110,230,30);
                     namaPelanggan.setForeground(Color.BLACK);
                     internalFrame.add(namaPelanggan);
                     // id pelanggan
                     JLabel idPelanggan = new JLabel("ID Pelanggan : " + this.tokoBuku.getDaftarTransaksi().get(i).getIdPelanggan());
-                    idPelanggan.setBounds(35,140,230,30);
+                    idPelanggan.setBounds(75,140,230,30);
                     idPelanggan.setForeground(Color.BLACK);
                     internalFrame.add(idPelanggan);
                     // daftar buku
@@ -116,68 +116,68 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
                     JLabel jumlahbuku4 = new JLabel();
                     JLabel jumlahbuku5 = new JLabel();
 
-                    daftarBuku.setBounds(35,170,230,30);
+                    daftarBuku.setBounds(75,170,230,30);
                     daftarBuku.setForeground(Color.BLACK);
                     internalFrame.add(daftarBuku);
                     for (int j = 0; j < this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().size(); j++) {
                         if(j == 0)
                         {
                             daftarBuku1.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
-                            daftarBuku1.setBounds(130,170,230,30);
+                            daftarBuku1.setBounds(170,170,230,30);
                             daftarBuku1.setForeground(Color.BLACK);
                             internalFrame.add(daftarBuku1);
                             jumlahbuku1.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJumlahBuku().toString() + " Pc");
-                            jumlahbuku1.setBounds(300,170,230,30);
+                            jumlahbuku1.setBounds(340,170,230,30);
                             jumlahbuku1.setForeground(Color.BLACK);
                             internalFrame.add(jumlahbuku1);
                         }
                         if (j == 1)
                         {
                             daftarBuku2.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
-                            daftarBuku2.setBounds(130,200,230,30);
+                            daftarBuku2.setBounds(170,200,230,30);
                             daftarBuku2.setForeground(Color.BLACK);
                             internalFrame.add(daftarBuku2);
                             jumlahbuku2.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJumlahBuku().toString() + " Pc");
-                            jumlahbuku2.setBounds(300,200,230,30);
+                            jumlahbuku2.setBounds(340,200,230,30);
                             jumlahbuku2.setForeground(Color.BLACK);
                             internalFrame.add(jumlahbuku2);
                         }
                         if (j == 2)
                         {
                             daftarBuku3.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
-                            daftarBuku3.setBounds(130,230,230,30);
+                            daftarBuku3.setBounds(170,230,230,30);
                             daftarBuku3.setForeground(Color.BLACK);
                             internalFrame.add(daftarBuku3);
                             jumlahbuku3.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJumlahBuku().toString() + " Pc");
-                            jumlahbuku3.setBounds(300,230,230,30);
+                            jumlahbuku3.setBounds(340,230,230,30);
                             jumlahbuku3.setForeground(Color.BLACK);
                             internalFrame.add(jumlahbuku3);
                         }
                         if (j == 3)
                         {
                             daftarBuku4.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
-                            daftarBuku4.setBounds(130,260,230,30);
+                            daftarBuku4.setBounds(170,260,230,30);
                             daftarBuku4.setForeground(Color.BLACK);
                             internalFrame.add(daftarBuku4);
                             jumlahbuku4.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJumlahBuku().toString() + " Pc");
-                            jumlahbuku4.setBounds(300,260,230,30);
+                            jumlahbuku4.setBounds(340,260,230,30);
                             jumlahbuku4.setForeground(Color.BLACK);
                             internalFrame.add(jumlahbuku4);
                         }
                         if (j == 4)
                         {
                             daftarBuku5.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJudulBuku());
-                            daftarBuku5.setBounds(130,290,230,30);
+                            daftarBuku5.setBounds(170,290,230,30);
                             daftarBuku5.setForeground(Color.BLACK);
                             internalFrame.add(daftarBuku5);
                             jumlahbuku5.setText(this.tokoBuku.getDaftarTransaksi().get(i).getDaftarBuku().get(j).getJumlahBuku().toString() + " Pc");
-                            jumlahbuku5.setBounds(300,290,230,30);
+                            jumlahbuku5.setBounds(340,290,230,30);
                             jumlahbuku5.setForeground(Color.BLACK);
                             internalFrame.add(jumlahbuku5);
                         }
                     }
                     JLabel totalHarga = new JLabel("Total Harga : " + this.tokoBuku.getDaftarTransaksi().get(i).getSubTotalTransaksi());
-                    totalHarga.setBounds(35,330,230,30);
+                    totalHarga.setBounds(75,330,230,30);
                     totalHarga.setForeground(Color.BLACK);
                     totalHarga.setFont(new Font("Arial", Font.BOLD, 20));
                     internalFrame.add(totalHarga);

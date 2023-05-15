@@ -55,16 +55,16 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
         tambahButton.setBounds(150, 140, 100, 30);
         panel.add(tambahButton);
 
-        setLocationRelativeTo(null);
+//        setLocationRelativeTo(null);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
         setLayout(null);
         getContentPane().setBackground(new Color(92, 64, 51));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+//        setLocationRelativeTo(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
-        setBounds(300, 90, 800, 490);
+        setBounds(360, 200, 880, 495);
         setVisible(true);
         setResizable(false);
     }
@@ -82,6 +82,12 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
                 String nama = namaField.getText();
                 String ID = String.format("PL%03d",this.tokoBuku.getDaftarPelanggan().size()+1);
 
+                for (int i=0;i<this.tokoBuku.getDaftarPelanggan().size();i++){
+                    if (this.tokoBuku.getDaftarPelanggan().get(i).getNama().equals(nama)){
+                        JOptionPane.showMessageDialog(null, "Nama sudah terdaftar");
+                        return;
+                    }
+                }
                 Pelanggan pelanggan = new Pelanggan(nama, ID);
                 this.tokoBuku.getDaftarPelanggan().add(pelanggan);
                 JOptionPane.showInternalMessageDialog(null, "Data Berhasil Ditambahkan");
