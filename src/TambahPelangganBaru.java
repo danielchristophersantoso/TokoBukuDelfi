@@ -33,11 +33,12 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
             fileMenu.add(item);
             fileMenu.addSeparator();
         }
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
 
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
-        headerLabel.setBounds(0,20,800,100);
+        headerLabel.setBounds(40,20,800,100);
         add(headerLabel, BorderLayout.NORTH);
 
 
@@ -47,7 +48,7 @@ public class TambahPelangganBaru extends JFrame implements ActionListener {
         namaField.setBounds(150,30,200,30);
         panel.add(namaField);
 
-        panel.setBounds(200,100,400,200);
+        panel.setBounds(240,100,400,200);
         panel.setBackground(new Color(255, 255, 255,50));
         tambahButton.addActionListener(this);
         tambahButton.setBackground(Color.BLACK);

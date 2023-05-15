@@ -41,7 +41,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
-        headerLabel.setBounds(0,20,800,100);
+        headerLabel.setBounds(40,20,800,100);
 
         namaKoleksiLabel.setBounds(40,30,230,30);
         namaKoleksiLabel.setForeground(Color.BLACK);
@@ -55,7 +55,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         panel.add(hapusKoleksiBtn);
 
         panel.setBackground(new Color(255, 255, 255,50));;
-        panel.setBounds(200,100,400,200);
+        panel.setBounds(240,100,400,200);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
