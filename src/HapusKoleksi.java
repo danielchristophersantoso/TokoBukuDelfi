@@ -64,7 +64,7 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setBounds(300, 90, 800, 490);
+        setBounds(360, 200, 880, 495);
         setVisible(true);
         setResizable(false);
     }
