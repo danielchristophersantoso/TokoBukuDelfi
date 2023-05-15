@@ -36,7 +36,8 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
         labelTambahKoleksi.setHorizontalAlignment(SwingConstants.CENTER);
         labelTambahKoleksi.setBounds(-10,40,880,50);
         labelTambahKoleksi.setForeground(Color.BLACK);
-        labelTambahKoleksi.setBackground(new Color(92, 64, 51));
+//        labelTambahKoleksi.setBackground(new Color(92, 64, 51));
+        labelTambahKoleksi.setBackground(Color.darkGray);
         labelTambahKoleksi.setOpaque(true);
         add(labelTambahKoleksi);
 
@@ -51,7 +52,8 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
 
         panel.add(labelNamaKoleksi);
 
-        panel.setBackground(new Color(0,0,0,100));
+//        panel.setBackground(new Color(0,0,0,100));
+        panel.setBackground(Color.GRAY);
         panel.setBounds(230, 110, 400,90);
         panel.setOpaque(true);
         panel.setLayout(null);
@@ -64,12 +66,12 @@ public class TambahKoleksiBaru extends JFrame implements ActionListener {
         btnTambahKoleksi.setFocusable(false);
         add(btnTambahKoleksi);
 
-        this.getContentPane().setBackground(new Color(92, 64, 51));
+//        this.getContentPane().setBackground(new Color(92, 64, 51));
+        this.getContentPane().setBackground(Color.darkGray);
         setTitle("Toko Buku Delfi");
         setLayout(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setVisible(true);
-        setLocationRelativeTo(null);
         setBounds(360,200,880,495);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

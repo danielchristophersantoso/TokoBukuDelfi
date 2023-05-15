@@ -22,7 +22,8 @@ public class Masuk extends JFrame implements ActionListener {
         labelMasuk.setForeground(Color.BLACK);
         panel.add(labelMasuk);
 
-        panel.setBackground(new Color(92, 64, 51));
+//        panel.setBackground(new Color(92, 64, 51));
+        panel.setBackground(Color.gray);
         usernameLabel.setBounds(285, 170, 70, 20);
         usernameLabel.setForeground(Color.BLACK);
         panel.add(usernameLabel);
@@ -46,7 +47,6 @@ public class Masuk extends JFrame implements ActionListener {
 
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setVisible(true);
-        setLocationRelativeTo(null);
         setBounds(360,200,880,495);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
