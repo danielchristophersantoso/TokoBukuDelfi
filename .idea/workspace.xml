@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="initialize">
+    <list default="true" id="b6bb369d-6cb3-4ce8-91fb-d2082602915d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/src/HapusBuku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusBuku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Keluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keluar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuUtama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuUtama.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/HapusKoleksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HapusKoleksi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TambahPelangganBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TambahPelangganBaru.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TampilkanRiwayatTransaksi.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,30 +53,19 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;daniel&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;shamgar&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PPTI BCA/PPTI BCA - Cawu 2 - UNSORTED/Object Oriented Programming/Source Code/Source Code Pak Harvi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bcamaster/Documents/Ngoding/Java Files/OOP&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Keluar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Keluar" />
-      <module name="TokoBukuDelfi" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TokoBukuDelfi" />
@@ -93,8 +73,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuUtama" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MenuUtama" />
+    <configuration name="Masuk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Masuk" />
+      <module name="TokoBukuDelfi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TambahBukuBaru" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TambahBukuBaru" />
       <module name="TokoBukuDelfi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,8 +90,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Keluar" />
-        <item itemvalue="Application.MenuUtama" />
+        <item itemvalue="Application.TambahBukuBaru" />
+        <item itemvalue="Application.Masuk" />
       </list>
     </recent_temporary>
   </component>
@@ -160,6 +147,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initialize" />
     <option name="LAST_COMMIT_MESSAGE" value="initialize" />
   </component>
