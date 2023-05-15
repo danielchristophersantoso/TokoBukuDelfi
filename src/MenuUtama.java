@@ -51,7 +51,7 @@ public class MenuUtama extends JFrame implements ActionListener {
         this.setBounds(360, 200, 880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(92, 64, 51));
+        this.getContentPane().setBackground(Color.darkGray);
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
     }

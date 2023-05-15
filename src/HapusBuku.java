@@ -44,7 +44,7 @@ public class HapusBuku extends JFrame implements ActionListener {
         titleLabel.setBounds(0, 35, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
 
-        panel.setBackground(Color.white);
+        panel.setBackground(Color.gray);
         panel.setBounds(150, 100, 580, 295);
         panel.setLayout(null);
         this.add(panel);
@@ -89,7 +89,7 @@ public class HapusBuku extends JFrame implements ActionListener {
         this.setBounds(360, 200, 880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(92, 64, 51));
+        this.getContentPane().setBackground(Color.darkGray);
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
     }
