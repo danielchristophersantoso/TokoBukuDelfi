@@ -27,7 +27,7 @@ public class TambahStokBuku extends JFrame implements ActionListener {
     private ArrayList<Buku> daftarBuku;
     private JLabel jumlahLabel = new JLabel("Jumlah Buku            : ");
     private JTextField jumlahField = new JTextField();
-    private int indexBuku=-9999999;
+    private int indexBuku = -9999999;
     public TambahStokBuku(TokoBuku tokoBuku){
         this.tokoBuku = tokoBuku;
         this.setTitle("Toko Buku Delfi");
@@ -46,7 +46,7 @@ public class TambahStokBuku extends JFrame implements ActionListener {
         titleLabel.setBounds(0, 35, 880, 40);
         add(titleLabel, BorderLayout.NORTH);
 
-        panel.setBackground(Color.white);
+        panel.setBackground(Color.GRAY);
         panel.setBounds(150, 100, 580, 295);
         panel.setLayout(null);
         this.add(panel);
@@ -100,7 +100,7 @@ public class TambahStokBuku extends JFrame implements ActionListener {
         this.setSize(880, 495);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(92, 64, 51));
+        this.getContentPane().setBackground(Color.darkGray);
         this.setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         this.setVisible(true);
     }
