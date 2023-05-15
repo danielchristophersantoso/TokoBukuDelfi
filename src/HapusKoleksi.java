@@ -54,12 +54,12 @@ public class HapusKoleksi extends JFrame implements ActionListener {
         hapusKoleksiBtn.setBounds(130, 140, 150, 30);
         panel.add(hapusKoleksiBtn);
 
-        panel.setBackground(new Color(255, 255, 255,50));;
+        panel.setBackground(Color.GRAY);;
         panel.setBounds(240,100,400,200);
         panel.setLayout(null);
         add(panel,BorderLayout.CENTER);
 
-        this.getContentPane().setBackground(new Color(92, 64, 51));
+        this.getContentPane().setBackground(Color.DARK_GRAY);
         setLayout(null);
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);

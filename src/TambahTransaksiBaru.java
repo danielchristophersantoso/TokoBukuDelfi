@@ -180,12 +180,12 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         panel.add(tambahTransaksibtn);
 
         panel.setLayout(null);
-        panel.setBackground(new Color(255, 255, 255,50));
+        panel.setBackground(Color.GRAY);
         panel.setBounds(53,70,760,350);
         add(panel,BorderLayout.CENTER);
 
 
-        getContentPane().setBackground(new Color(92, 64, 51));
+        getContentPane().setBackground(Color.darkGray);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 //        setLocationRelativeTo(null);

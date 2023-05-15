@@ -62,11 +62,11 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
 
         setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         panel.setLayout(null);
-        panel.setBackground(new Color(255, 255, 255,50));
+        panel.setBackground(Color.GRAY);
         panel.setBounds(240, 80, 400, 200);
         add(panel,BorderLayout.CENTER);
 
-        getContentPane().setBackground(new Color(92, 64, 51));
+        getContentPane().setBackground(Color.DARK_GRAY);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
