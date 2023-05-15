@@ -41,7 +41,7 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 30));
         headerLabel.setForeground(Color.BLACK);
-        headerLabel.setBounds(0,0,800,80);
+        headerLabel.setBounds(40,0,800,80);
         add(headerLabel, BorderLayout.NORTH);
 
         pilihIdTransaksi.setBounds(35,30,230,30);
@@ -60,10 +60,10 @@ public class TampilkanRiwayatTransaksi extends JFrame implements ActionListener 
             dropdownListTransaksi.addItem(this.tokoBuku.getDaftarTransaksi().get(i).getIdTransaksi());
         }
 
-
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
         panel.setLayout(null);
         panel.setBackground(new Color(255, 255, 255,50));
-        panel.setBounds(200, 80, 400, 200);
+        panel.setBounds(240, 80, 400, 200);
         add(panel,BorderLayout.CENTER);
 
         getContentPane().setBackground(new Color(92, 64, 51));

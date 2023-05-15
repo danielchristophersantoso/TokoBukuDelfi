@@ -170,6 +170,7 @@ public class TambahTransaksiBaru extends JFrame implements ActionListener {
         panel.add(jumlahBukuField5);
 
 
+        setIconImage((new ImageIcon(this.getClass().getResource("icon.png"))).getImage());
 
 
         tambahTransaksibtn.addActionListener(this);
